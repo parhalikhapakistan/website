@@ -162,7 +162,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .portrait-card strong { font-family: var(--font-head); color: var(--forest); font-size: .98rem; }
 .portrait-card span { font-size: .8rem; color: var(--muted); font-weight: 500; }
 .portrait-badge {
-  position: absolute; right: -14px; top: 18%;
+  position: absolute; right: -14px; bottom: 128px;
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--forest); color: #fff; font-size: .8rem; font-weight: 600;
   padding: 10px 14px; border-radius: 999px; box-shadow: var(--shadow);
@@ -582,7 +582,7 @@ td:first-child { font-weight: 700; color: var(--forest); white-space: nowrap; }
   .btn-lg { padding: 15px 22px; }
   .hero .btn-row .btn { flex: 1 1 100%; }
   .portrait-card { left: -6px; bottom: 20px; }
-  .portrait-badge { right: -6px; }
+  .portrait-badge { right: -6px; bottom: 104px; }
   .pillars, .programs, .skills-grid { grid-template-columns: 1fr; }
   .principles { grid-template-columns: repeat(2, 1fr); }
   .principles li:last-child { grid-column: 1 / -1; }
