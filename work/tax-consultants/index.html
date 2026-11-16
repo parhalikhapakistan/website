@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledgerline Tax Advisors | Concept Tax Consultancy Website by PLP</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Concept website for a fictional tax and corporate advisory firm, designed by Parha Likha Pakistan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{--slate:#1E293B;--slate2:#334155;--amber:#F59E0B;--amber-l:#FEF3C7;--paper:#FAFAF7;--text:#55627A;--line:#E5E7EB;--ok:#15803D}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font:400 16px/1.7 Manrope,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+h1,h2{font-family:"Source Serif 4",Georgia,serif;color:var(--slate);line-height:1.12;margin:0 0 .5em;font-weight:700}
+h3{color:var(--slate);font-weight:700;font-size:1.1rem;margin:0 0 .4em}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:6px;font:700 .95rem Manrope;border:0;cursor:pointer;transition:.2s}
+.btn-amber{background:var(--amber);color:var(--slate)}.btn-amber:hover{background:#FBBF24}
+.btn-slate{background:var(--slate);color:#fff}.btn-slate:hover{background:var(--slate2)}
+.btn-line{border:1.5px solid var(--line);background:#fff;color:var(--slate)}.btn-line:hover{border-color:var(--slate)}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;color:var(--slate)}
+.logo i{width:36px;height:36px;background:var(--slate);border-radius:6px;display:grid;place-items:center;font-style:normal}
+.logo small{display:block;font-weight:600;font-size:.68rem;letter-spacing:.14em;color:var(--amber);text-transform:uppercase}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:600;font-size:.94rem;color:var(--slate)}
+nav a:hover{color:#B45309}
+.menu-btn{display:none;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:9px 14px;font:700 .9rem Manrope;color:var(--slate)}
+.alert{background:var(--amber-l);border-bottom:1px solid #FDE68A;color:#78350F;font-size:.9rem;text-align:center;padding:10px 20px}
+.alert b{color:#78350F}.alert a{text-decoration:underline;font-weight:700}
+/* hero */
+.hero{padding:80px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.kicker{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#B45309;margin-bottom:16px}
+.hero h1{font-size:clamp(2.4rem,5vw,3.9rem)}
+.hero h1 u{text-decoration-color:var(--amber);text-decoration-thickness:6px;text-underline-offset:6px}
+.hero p{font-size:1.1rem;max-width:520px;margin-bottom:30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.creds{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;font-size:.88rem;font-weight:600;color:var(--slate)}
+.creds span::before{content:"✓ ";color:var(--ok);font-weight:800}
+.doc{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 60px rgba(30,41,59,.12);padding:26px;position:relative}
+.doc::before{content:"";position:absolute;inset:12px -12px -12px 12px;border:1px solid var(--line);border-radius:14px;z-index:-1;background:#fff}
+.doc-h{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px dashed var(--line);margin-bottom:14px}
+.doc-h b{color:var(--slate)}.doc-h span{font-size:.75rem;font-weight:700;color:var(--ok);background:#DCFCE7;padding:4px 10px;border-radius:999px}
+.line{display:flex;justify-content:space-between;padding:9px 0;font-size:.92rem;border-bottom:1px solid #F3F4F6}
+.line b{color:var(--slate);font-variant-numeric:tabular-nums}
+.total{display:flex;justify-content:space-between;margin-top:12px;padding:14px;background:var(--slate);color:#fff;border-radius:8px;font-weight:700}
+.total b{color:var(--amber)}
+.stamp{position:absolute;right:-26px;top:-34px;width:110px;height:110px;border-radius:50%;border:3px solid var(--ok);color:var(--ok);display:grid;place-items:center;text-align:center;font:800 .75rem Manrope;letter-spacing:.08em;transform:rotate(-14deg);background:rgba(255,255,255,.9)}
+/* services */
+section{padding:90px 0}
+.white{background:#fff;border-block:1px solid var(--line)}
+.head{max-width:640px;margin-bottom:46px}
+.head h2{font-size:clamp(2rem,3.8vw,2.7rem)}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.s{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.2s}
+.s:nth-child(3n){border-right:0}.s:nth-last-child(-n+3){border-bottom:0}
+.s:hover{background:var(--paper)}
+.s .n{font:700 .8rem Manrope;color:#B45309;letter-spacing:.1em;margin-bottom:12px;display:block}
+.s p{margin:0;font-size:.93rem}
+/* pricing */
+.price{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:30px;display:flex;flex-direction:column}
+.pc.feat{border:2px solid var(--slate);position:relative}
+.pc.feat::before{content:"Most requested";position:absolute;top:-12px;left:24px;background:var(--amber);color:var(--slate);font:800 .7rem Manrope;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:4px}
+.pc .amt{font-family:"Source Serif 4",serif;font-size:2.2rem;color:var(--slate);font-weight:700;margin:6px 0 2px}
+.pc .amt small{font:500 .85rem Manrope;color:var(--text)}
+.pc ul{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:8px;font-size:.92rem;flex:1}
+.pc li::before{content:"✓ ";color:var(--ok);font-weight:800}
+/* checklist */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.checklist{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
+.checklist label{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--line);font-weight:500;cursor:pointer;color:var(--slate)}
+.checklist input{width:18px;height:18px;margin-top:4px;accent-color:var(--ok)}
+.progress{height:8px;border-radius:999px;background:#F3F4F6;margin:18px 0 6px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--ok);transition:.3s}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:700;color:var(--slate);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:#B45309}
+details[open] summary::after{content:"–"}
+details p{margin:8px 0 0;font-size:.94rem}
+/* consult */
+.consult{background:var(--slate);color:#CBD5E1;border-radius:16px;padding:54px;display:grid;grid-template-columns:.9fr 1.1fr;gap:46px}
+.consult h2{color:#fff}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label.f{display:grid;gap:6px;font-weight:600;font-size:.86rem;color:#fff}
+.f input,.f select,.f textarea{font:400 1rem Manrope;border:1px solid #475569;background:#273449;color:#fff;border-radius:6px;padding:12px 14px;width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--amber)}
+.full{grid-column:1/-1}
+.disc{font-size:.8rem;color:#94A3B8;margin-top:16px}
+footer{padding:40px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:980px){
+  .menu-btn{display:block}
+  nav ul{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 20px 18px;border-bottom:1px solid var(--line)}
+  nav.open ul{display:flex}nav ul a{display:block;padding:12px 0}
+  .nav>.btn{display:none}
+  .hero .wrap,.two,.consult{grid-template-columns:1fr}.doc{max-width:460px}
+  .svc{grid-template-columns:1fr 1fr}.s{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+  .price{grid-template-columns:1fr}.consult{padding:32px 22px}section{padding:70px 0}
+}
+@media(max-width:600px){.svc,form{grid-template-columns:1fr}.stamp{right:-6px;width:90px;height:90px;font-size:.65rem}}
+</style>
+</head>
+<body>
+<div class="alert">📅 <b>Tax season:</b> avoid last-minute penalties. File your annual income tax return early. <a href="#consult">Start now →</a></div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.4" stroke-linecap="round"><path d="M4 20h16M6 16V9M10 16V5M14 16v-6M18 16V8"/></svg></i><span>Ledgerline<small>Tax &amp; Corporate Advisors</small></span></a>
+    <nav data-nav aria-label="Main"><ul><li><a href="#services">Services</a></li><li><a href="#pricing">Packages</a></li><li><a href="#documents">Documents</a></li><li><a href="#faq">FAQs</a></li></ul></nav>
+    <a class="btn btn-slate" href="#consult">Free Consultation</a>
+    <button class="menu-btn" data-menu aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Blue Area, Islamabad · Serving clients nationwide</span>
+      <h1>Taxes filed right. <u>On time.</u> Without the stress.</h1>
+      <p>Income tax returns, NTN and sales tax registration, company incorporation and bookkeeping for salaried individuals, freelancers and growing businesses.</p>
+      <div class="btns"><a class="btn btn-amber" href="#consult">Book a Free Consultation</a><a class="btn btn-line" href="#pricing">See Packages</a></div>
+      <div class="creds"><span>Qualified tax practitioners</span><span>Confidential &amp; secure</span><span>Fixed, upfront fees</span></div>
+    </div>
+    <div class="doc" aria-hidden="true">
+      <div class="doc-h"><b>Return summary · Tax Year 2026</b><span>Filed</span></div>
+      <div class="line"><span>Salary income</span><b>2,400,000</b></div>
+      <div class="line"><span>Tax deducted at source</span><b>(96,000)</b></div>
+      <div class="line"><span>Allowable deductions</span><b>(25,000)</b></div>
+      <div class="line"><span>Wealth statement</span><b>Reconciled ✓</b></div>
+      <div class="total"><span>Status</span><b>Active taxpayer</b></div>
+      <div class="stamp">SAMPLE<br>FIGURES</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="white">
+  <div class="wrap">
+    <div class="head"><span class="kicker">What we do</span><h2>Complete tax and compliance support</h2><p>One trusted team for your personal and business tax needs.</p></div>
+    <div class="svc">
+      <div class="s"><span class="n">01</span><h3>Income Tax Returns</h3><p>Annual returns and wealth statements for salaried individuals, freelancers and business owners.</p></div>
+      <div class="s"><span class="n">02</span><h3>NTN Registration</h3><p>New taxpayer registration for individuals, AOPs and companies.</p></div>
+      <div class="s"><span class="n">03</span><h3>Sales Tax Registration</h3><p>Federal and provincial sales tax registration and monthly filing.</p></div>
+      <div class="s"><span class="n">04</span><h3>Company Incorporation</h3><p>Private limited and SMC company registration with all post-incorporation filings.</p></div>
+      <div class="s"><span class="n">05</span><h3>Bookkeeping &amp; Payroll</h3><p>Monthly accounts, payroll processing and management reports.</p></div>
+      <div class="s"><span class="n">06</span><h3>Tax Notices</h3><p>Professional replies and representation for notices and audits.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="head"><span class="kicker">Packages</span><h2>Clear, fixed fees</h2><p>Sample prices for this concept. A real firm would publish its own rates.</p></div>
+    <div class="price">
+      <div class="pc"><h3>Salaried Individual</h3><div class="amt">5,000 <small>PKR / year</small></div><p>For salaried persons with no business income.</p><ul><li>Income tax return</li><li>Wealth statement</li><li>Active taxpayer status check</li></ul><a class="btn btn-line" href="#consult">Get Started</a></div>
+      <div class="pc feat"><h3>Freelancer / Business</h3><div class="amt">12,000 <small>PKR / year</small></div><p>For freelancers and sole proprietors.</p><ul><li>Return with business schedules</li><li>Wealth reconciliation</li><li>Tax planning session</li><li>NTN registration if needed</li></ul><a class="btn btn-slate" href="#consult">Get Started</a></div>
+      <div class="pc"><h3>Company Compliance</h3><div class="amt">Custom</div><p>For private limited and SMC companies.</p><ul><li>Corporate tax returns</li><li>Sales tax filings</li><li>Annual corporate filings</li><li>Bookkeeping options</li></ul><a class="btn btn-line" href="#consult">Request Quote</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="documents" class="white">
+  <div class="wrap two">
+    <div>
+      <span class="kicker">Get ready</span>
+      <h2 style="font-size:clamp(2rem,3.8vw,2.6rem)">Documents checklist for salaried individuals</h2>
+      <p>Tick off what you have. We'll guide you on anything missing.</p>
+      <div class="progress"><i id="bar"></i></div>
+      <small id="count">0 of 6 ready</small>
+    </div>
+    <div class="checklist">
+      <label><input type="checkbox"> CNIC copy</label>
+      <label><input type="checkbox"> Salary certificate / tax deduction certificate</label>
+      <label><input type="checkbox"> Bank statements for the tax year</label>
+      <label><input type="checkbox"> Property and vehicle details</label>
+      <label><input type="checkbox"> Utility bills with tax deducted</label>
+      <label><input type="checkbox"> Previous year's return (if filed)</label>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap two">
+    <div><span class="kicker">FAQs</span><h2 style="font-size:clamp(2rem,3.8vw,2.6rem)">Common questions</h2><p>Can't find your answer? Ask us in a free consultation.</p></div>
+    <div>
+      <details><summary>Why should I file a tax return if tax is already deducted from my salary?</summary><p>Filing keeps you on the active taxpayer list, which typically means lower withholding rates on banking, property and vehicle transactions.</p></details>
+      <details><summary>Can you file my return if I live abroad?</summary><p>Yes. Everything can be handled online through secure document sharing and video calls.</p></details>
+      <details><summary>How long does NTN registration take?</summary><p>Usually a few working days once all documents are provided.</p></details>
+      <details><summary>Is my information kept confidential?</summary><p>Yes. Client documents are handled only by assigned staff and are never shared without consent.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="consult" style="padding-top:0">
+  <div class="wrap">
+    <div class="consult">
+      <div>
+        <span class="kicker" style="color:var(--amber)">Free consultation</span>
+        <h2 style="font-size:clamp(2rem,3.8vw,2.6rem)">Talk to a tax advisor</h2>
+        <p>Tell us what you need and we'll call you back within one working day.</p>
+        <p class="disc">This is a concept website. Information shown is general and not tax advice. Tax rules change; always consult a qualified professional.</p>
+      </div>
+      <form>
+        <label class="f">Full name<input required></label>
+        <label class="f">Phone / WhatsApp<input type="tel" required></label>
+        <label class="f full">I need help with<select><option>Income tax return</option><option>NTN registration</option><option>Sales tax</option><option>Company incorporation</option><option>Bookkeeping</option><option>Tax notice</option></select></label>
+        <label class="f full">Details (optional)<textarea rows="3"></textarea></label>
+        <div class="full"><button class="btn btn-amber" type="submit">Request Call Back</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><strong style="color:var(--slate)">Ledgerline Tax Advisors (fictional)</strong><span>Website concept by <a href="../../index.html" style="color:#B45309;font-weight:700">Parha Likha Pakistan</a></span></div>
+</footer>
+<script>
+const boxes=document.querySelectorAll('.checklist input');
+boxes.forEach(b=>b.addEventListener('change',()=>{const n=[...boxes].filter(x=>x.checked).length;document.getElementById('bar').style.width=(n/boxes.length*100)+'%';document.getElementById('count').textContent=n+' of '+boxes.length+' ready';}));
+</script>
+<script src="../concept.js"></script>
+</body>
+</html>

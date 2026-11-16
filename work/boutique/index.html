@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noor Atelier | Concept Clothing Boutique Website by PLP</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F7F3EE;--ink:#141210;--terra:#B4532A;--sand:#E7DCCF;--muted:#7A6F66;--line:#DDD2C5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 Karla,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:500;line-height:1.05;margin:0 0 .4em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:15px 34px;font:700 .75rem Karla;letter-spacing:.24em;text-transform:uppercase;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--terra);border-color:var(--terra)}
+.btn.ghost{background:none;color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:#fff}
+.strip{background:var(--ink);color:#fff;text-align:center;font-size:.78rem;letter-spacing:.14em;padding:9px;text-transform:uppercase}
+header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+nav a:hover{color:var(--terra)}
+.logo{font-family:"Bodoni Moda",serif;font-size:1.9rem;letter-spacing:.08em;text-align:center}
+.logo span{font-style:italic;color:var(--terra)}
+.icons{justify-self:end;display:flex;gap:18px;align-items:center;font-size:.85rem;font-weight:500}
+.bag{display:inline-flex;align-items:center;gap:6px}
+.bag b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--terra);color:#fff;font-size:.72rem}
+.menu-btn{display:none;background:none;border:1px solid var(--ink);padding:7px 12px;font:700 .72rem Karla;letter-spacing:.14em;text-transform:uppercase}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:82vh}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:60px 6vw}
+.season{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);margin-bottom:22px}
+.hero h1{font-size:clamp(3rem,7vw,6.4rem)}
+.hero h1 i{color:var(--terra)}
+.hero p{max-width:420px;color:var(--muted);margin:16px 0 34px;font-size:1.05rem}
+.hero-r{position:relative;background:linear-gradient(160deg,#D9C7B3,#B98E6E);overflow:hidden}
+.hero-r svg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%}
+.hero-r .lbl{position:absolute;top:30px;right:30px;writing-mode:vertical-rl;letter-spacing:.4em;font-size:.72rem;text-transform:uppercase;color:#fff}
+section{padding:100px 0}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:20px;flex-wrap:wrap}
+.sec-h h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:0}
+.sec-h a{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid;padding-bottom:3px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{aspect-ratio:3/4;position:relative;display:flex;align-items:flex-end;padding:22px;color:#fff;overflow:hidden}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.45))}
+.cat h3{position:relative;z-index:1;font-size:1.6rem;margin:0}
+.cat small{display:block;font:500 .7rem Karla;letter-spacing:.2em;text-transform:uppercase}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 22px}
+.p .img{aspect-ratio:3/4;position:relative;margin-bottom:14px;overflow:hidden}
+.p .img span{position:absolute;top:12px;left:12px;background:#fff;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;font-weight:700}
+.p .img button{position:absolute;left:12px;right:12px;bottom:12px;opacity:0;transform:translateY(8px);transition:.25s}
+.p:hover .img button{opacity:1;transform:none}
+.p h3{font-size:1.1rem;font-family:Karla;font-weight:500;margin:0 0 2px}
+.p .pr{color:var(--muted);font-size:.92rem}
+.p .pr s{margin-left:8px;opacity:.6}
+.dots{display:flex;gap:6px;margin-top:8px}.dots i{width:12px;height:12px;border-radius:50%;border:1px solid var(--line)}
+.story{background:var(--sand);display:grid;grid-template-columns:1fr 1fr;gap:0}
+.story .t{padding:90px 7vw;display:flex;flex-direction:column;justify-content:center}
+.story h2{font-size:clamp(2.2rem,4vw,3.2rem)}
+.story p{color:var(--muted)}
+.story .art{background:repeating-linear-gradient(45deg,#C9A88A 0 14px,#D5B79B 14px 28px);min-height:420px}
+.usp{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
+.usp div{padding:30px 22px;text-align:center;font-size:.9rem;color:var(--muted)}
+.usp div+div{border-left:1px solid var(--line)}
+.usp b{display:block;color:var(--ink);font-family:"Bodoni Moda",serif;font-size:1.15rem;font-weight:500}
+.news{text-align:center;max-width:620px;margin:0 auto}
+.news form{display:flex;margin-top:24px;border:1px solid var(--ink)}
+.news input{flex:1;min-width:0;border:0;background:none;padding:15px 18px;font:inherit}
+@media(max-width:520px){.news form{flex-direction:column}.news .btn{width:100%}}
+.news input:focus{outline:none}
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:960px){
+  .nav{grid-template-columns:auto 1fr auto;gap:12px}.logo{text-align:left;font-size:1.5rem}
+  .menu-btn{display:block}nav{position:absolute;top:78px;left:0;right:0}
+  nav ul{display:none;flex-direction:column;gap:0;background:var(--paper);padding:6px 24px 18px;border-bottom:1px solid var(--line)}
+  nav.open ul{display:flex}nav ul a{display:block;padding:12px 0}
+  .nav{grid-template-columns:auto 1fr auto auto}.icons span.acc{display:none}
+  .hero,.story{grid-template-columns:1fr}.hero-r{min-height:420px}
+  .cats,.products{grid-template-columns:1fr 1fr}.usp{grid-template-columns:1fr 1fr}.usp div:nth-child(3){border-left:0}
+  .p .img button{opacity:1;transform:none}section{padding:70px 0}.story .t{padding:60px 24px}
+}
+@media(max-width:520px){.usp{grid-template-columns:1fr}.usp div+div{border-left:0;border-top:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<div class="strip">Free delivery across Pakistan on orders above PKR 7,000</div>
+<header>
+  <div class="wrap nav">
+    <button class="menu-btn" data-menu aria-expanded="false">Menu</button>
+    <nav data-nav aria-label="Main"><ul><li><a href="#new">New In</a></li><li><a href="#shop">Shop</a></li><li><a href="#story">Our Story</a></li></ul></nav>
+    <a class="logo" href="#">NOOR <span>atelier</span></a>
+    <div class="icons"><span class="acc">Account</span><a class="bag" href="#" data-demo="Demo only: a real store would open the shopping bag and checkout.">Bag <b data-cart-count>0</b></a></div>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="hero-l">
+    <span class="season">Winter Edit · 2026</span>
+    <h1>Quiet <i>luxury,</i><br>woven by hand.</h1>
+    <p>Hand-embroidered pret and unstitched lawn, designed in Karachi and finished by artisans across Pakistan.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#shop">Shop the Edit</a><a class="btn ghost" href="#story">Our Craft</a></div>
+  </div>
+  <div class="hero-r" aria-hidden="true">
+    <span class="lbl">Noor Atelier · Winter</span>
+    <svg viewBox="0 0 200 320"><circle cx="100" cy="46" r="24" fill="#5A3A2A"/><path d="M78 70h44l26 230H52Z" fill="#F7F3EE"/><path d="M78 70h44l8 70H70Z" fill="#B4532A"/><g fill="none" stroke="#B4532A" stroke-width="1.2" opacity=".7"><path d="M66 170h68M62 200h76M58 230h84M55 260h90"/><circle cx="100" cy="185" r="6"/><circle cx="85" cy="215" r="5"/><circle cx="115" cy="215" r="5"/></g><path d="M60 80c-30 40-40 80-34 120" stroke="#F7F3EE" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M140 80c30 40 40 80 34 120" stroke="#F7F3EE" stroke-width="12" fill="none" stroke-linecap="round"/></svg>
+  </div>
+</section>
+
+<section id="new">
+  <div class="wrap">
+    <div class="sec-h"><h2>Shop by category</h2><a href="#shop">View all</a></div>
+    <div class="cats">
+      <a class="cat" href="#shop" style="background:linear-gradient(160deg,#C4A68A,#8C6447)"><h3><small>Ready to wear</small>Pret</h3></a>
+      <a class="cat" href="#shop" style="background:linear-gradient(160deg,#9AA58A,#5E6B4E)"><h3><small>3-piece</small>Unstitched</h3></a>
+      <a class="cat" href="#shop" style="background:linear-gradient(160deg,#B97A6A,#7E3F33)"><h3><small>Festive</small>Formals</h3></a>
+      <a class="cat" href="#shop" style="background:linear-gradient(160deg,#8C8796,#4F4A5C)"><h3><small>Shawls &amp; more</small>Accessories</h3></a>
+    </div>
+  </div>
+</section>
+
+<section id="shop" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h"><h2>New arrivals</h2><a href="#">Filter</a></div>
+    <div class="products">
+      <div class="p"><div class="img" style="background:linear-gradient(170deg,#E8D8C6,#C9AC8F)"><span>New</span><button class="btn" data-add="Rust Embroidered Kurta">Add to bag</button></div><h3>Rust Embroidered Kurta</h3><div class="pr">PKR 8,950</div><div class="dots"><i style="background:#B4532A"></i><i style="background:#2F3A2F"></i></div></div>
+      <div class="p"><div class="img" style="background:linear-gradient(170deg,#DCE3D4,#A7B597)"><span>Bestseller</span><button class="btn" data-add="Sage Lawn 3-Piece">Add to bag</button></div><h3>Sage Lawn 3-Piece</h3><div class="pr">PKR 6,500</div><div class="dots"><i style="background:#9AA58A"></i><i style="background:#E7DCCF"></i></div></div>
+      <div class="p"><div class="img" style="background:linear-gradient(170deg,#EDE1E4,#C9A4AC)"><span>-20%</span><button class="btn" data-add="Blush Chiffon Formal">Add to bag</button></div><h3>Blush Chiffon Formal</h3><div class="pr">PKR 15,200 <s>19,000</s></div><div class="dots"><i style="background:#C9A4AC"></i></div></div>
+      <div class="p"><div class="img" style="background:linear-gradient(170deg,#D9D6DE,#8C8796)"><button class="btn" data-add="Charcoal Pashmina Shawl">Add to bag</button></div><h3>Charcoal Pashmina Shawl</h3><div class="pr">PKR 11,400</div><div class="dots"><i style="background:#4F4A5C"></i><i style="background:#B4532A"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="story" class="story" style="padding:0">
+  <div class="art" aria-hidden="true"></div>
+  <div class="t">
+    <span class="season">Our Craft</span>
+    <h2>Every stitch tells a story</h2>
+    <p>We work with women artisans in Hala and Multan, preserving traditional embroidery while designing for the modern wardrobe. Small batches, natural fabrics and fair wages, always.</p>
+    <a class="btn ghost" href="#shop" style="align-self:flex-start;margin-top:14px">Discover the Collection</a>
+  </div>
+</section>
+
+<div class="wrap"><div class="usp"><div><b>Nationwide delivery</b>3–5 working days</div><div><b>Easy exchange</b>Within 7 days</div><div><b>Cash on delivery</b>Pay at your door</div><div><b>WhatsApp styling</b>Personal help</div></div></div>
+
+<section>
+  <div class="wrap news">
+    <h2 style="font-size:2.4rem">Join the Noor circle</h2>
+    <p style="color:var(--muted)">Be first to know about new drops and private sales.</p>
+    <form><input type="email" placeholder="Your email address" required aria-label="Email"><button class="btn" type="submit">Subscribe</button></form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Noor Atelier (fictional brand)</span><span>Website concept by <a href="../../index.html" style="color:var(--terra);font-weight:700">Parha Likha Pakistan</a></span></div></footer>
+<script src="../concept.js"></script>
+</body>
+</html>

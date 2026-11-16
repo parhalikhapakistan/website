@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TalentBridge HR | Concept HR Consultancy Website by PLP</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--indigo:#3730A3;--indigo-l:#EEF0FF;--teal:#0D9488;--ink:#1E1B4B;--text:#565879;--line:#E4E5F2;--bg:#FAFAFF}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.7 "IBM Plex Sans",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+h1,h2{font-family:"IBM Plex Serif",Georgia,serif;color:var(--ink);line-height:1.15;margin:0 0 .5em;font-weight:600}
+h3{color:var(--ink);margin:0 0 .4em;font-size:1.1rem;font-weight:600}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:10px;font:600 .95rem "IBM Plex Sans";border:0;cursor:pointer;transition:.2s}
+.btn.p{background:var(--indigo);color:#fff}.btn.p:hover{background:#2E2890}
+.btn.s{background:#fff;color:var(--indigo);border:1.5px solid var(--line)}.btn.s:hover{border-color:var(--indigo)}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.2rem;color:var(--ink)}
+.logo svg{flex-shrink:0}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:500;color:var(--ink)}
+nav a:hover{color:var(--indigo)}
+.menu-btn{display:none;background:var(--indigo-l);color:var(--indigo);border:0;border-radius:8px;padding:9px 14px;font:600 .9rem "IBM Plex Sans"}
+.hero{padding:80px 0;background:linear-gradient(180deg,#fff,var(--bg))}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.switch{display:inline-flex;background:var(--indigo-l);border-radius:12px;padding:5px;margin-bottom:24px}
+.switch button{border:0;background:none;padding:9px 16px;border-radius:9px;font:600 .9rem "IBM Plex Sans";color:var(--indigo);cursor:pointer}
+.switch button.on{background:#fff;box-shadow:0 2px 8px rgba(55,48,163,.15)}
+.hero h1{font-size:clamp(2.3rem,4.8vw,3.6rem)}
+.hero p{font-size:1.1rem;max-width:520px;margin-bottom:28px}
+.panel[hidden]{display:none}
+.match{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 24px 60px rgba(30,27,75,.1)}
+.match h3{display:flex;justify-content:space-between;align-items:center}
+.match h3 span{font-size:.75rem;background:#DCFCE7;color:#166534;padding:3px 10px;border-radius:999px;font-weight:600}
+.cand{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:.9rem}
+.cand b{display:block;color:var(--ink);font-weight:600}
+.cand small{font-size:.82rem}
+.score{font-weight:700;color:var(--teal);font-size:.9rem}
+.bar{height:6px;background:var(--line);border-radius:999px;margin-top:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--teal);border-radius:999px}
+section{padding:90px 0}
+.h{text-align:center;max-width:660px;margin:0 auto 48px}.h h2{font-size:clamp(2rem,4vw,2.8rem)}
+.k{display:block;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.s{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;transition:.2s}
+.s:hover{border-color:var(--indigo);transform:translateY(-3px)}
+.s .ic{width:48px;height:48px;border-radius:12px;background:var(--indigo-l);display:grid;place-items:center;margin-bottom:16px;font-size:1.3rem}
+.s p{margin:0;font-size:.93rem}
+.jobs{display:grid;gap:12px}
+.job{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center}
+.job b{display:block;color:var(--ink);font-weight:600;font-size:1.05rem}
+.job .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.job .tags span{font-size:.78rem;background:var(--indigo-l);color:var(--indigo);border-radius:6px;padding:2px 8px}
+.job .sal{font-weight:600;color:var(--ink);white-space:nowrap}
+.cv{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--ink);color:#C7C8E8;border-radius:24px;padding:50px}
+.cv h2{color:#fff;font-size:clamp(1.9rem,3.8vw,2.6rem)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-weight:500;font-size:.88rem;color:#fff}
+input,select{font:400 1rem "IBM Plex Sans";border:1px solid #4B4A7A;background:#2A2763;color:#fff;border-radius:10px;padding:11px 13px;width:100%}
+input:focus,select:focus{outline:none;border-color:#A5B4FC}
+input[type=file]{padding:9px}
+.full{grid-column:1/-1}
+footer{padding:36px 0;font-size:.88rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:960px){
+  .menu-btn{display:block}nav{position:absolute;top:74px;left:0;right:0}
+  nav ul{display:none;flex-direction:column;gap:0;background:#fff;padding:6px 20px 18px;border-bottom:1px solid var(--line)}
+  nav.open ul{display:flex}nav ul a{display:block;padding:12px 0}
+  .nav>.btn{display:none}
+  .hero .wrap,.cv{grid-template-columns:1fr}.svc{grid-template-columns:1fr 1fr}.cv{padding:30px 20px}section{padding:70px 0}
+}
+@media(max-width:600px){.svc,form{grid-template-columns:1fr}.job{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><svg width="36" height="36" viewBox="0 0 36 36"><rect width="36" height="36" rx="9" fill="#3730A3"/><path d="M7 24c4-9 18-9 22 0" stroke="#5EEAD4" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="11" cy="14" r="3" fill="#fff"/><circle cx="25" cy="14" r="3" fill="#fff"/></svg>TalentBridge HR</a>
+    <nav data-nav aria-label="Main"><ul><li><a href="#services">Services</a></li><li><a href="#jobs">Jobs</a></li><li><a href="#cv">Submit CV</a></li></ul></nav>
+    <a class="btn p" href="#services">Hire Talent</a>
+    <button class="menu-btn" data-menu aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="switch" role="tablist"><button class="on" data-p="emp">For Employers</button><button data-p="cand">For Job Seekers</button></div>
+      <div class="panel" data-panel="emp"><h1>The right people, hired faster.</h1><p>Recruitment, HR outsourcing and policy support for SMEs and corporates across Pakistan. Shortlists in as little as 7 working days.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn p" href="#services">Explore HR Services</a><a class="btn s" href="#cv">Request a Callback</a></div></div>
+      <div class="panel" data-panel="cand" hidden><h1>Find a career you'll love.</h1><p>Browse verified openings from trusted employers and submit your CV once to be considered for multiple roles.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn p" href="#jobs">Browse Jobs</a><a class="btn s" href="#cv">Upload Your CV</a></div></div>
+    </div>
+    <div class="match" aria-label="Sample shortlist">
+      <h3>Shortlist · Finance Manager <span>3 strong matches</span></h3>
+      <div class="cand"><span class="av" style="background:#6366F1">AK</span><span><b>Candidate A</b><small>ACCA · 8 yrs · Lahore</small><div class="bar"><i style="width:94%"></i></div></span><span class="score">94%</span></div>
+      <div class="cand"><span class="av" style="background:#0D9488">SR</span><span><b>Candidate B</b><small>CA · 6 yrs · Karachi</small><div class="bar"><i style="width:89%"></i></div></span><span class="score">89%</span></div>
+      <div class="cand"><span class="av" style="background:#DB2777">MH</span><span><b>Candidate C</b><small>MBA Finance · 7 yrs · Islamabad</small><div class="bar"><i style="width:85%"></i></div></span><span class="score">85%</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="h"><span class="k">HR Services</span><h2>A complete HR partner for growing companies</h2></div>
+    <div class="svc">
+      <div class="s"><div class="ic">🎯</div><h3>Recruitment &amp; Headhunting</h3><p>Sourcing, screening and shortlisting from entry level to senior management.</p></div>
+      <div class="s"><div class="ic">💼</div><h3>HR Outsourcing</h3><p>Your outsourced HR department: onboarding, records and employee relations.</p></div>
+      <div class="s"><div class="ic">🧾</div><h3>Payroll Management</h3><p>Accurate monthly payroll, payslips and statutory deductions.</p></div>
+      <div class="s"><div class="ic">📘</div><h3>HR Policies &amp; Handbooks</h3><p>Employee handbooks, policies and job descriptions tailored to you.</p></div>
+      <div class="s"><div class="ic">📊</div><h3>Performance Management</h3><p>KPI frameworks, appraisal systems and review cycles.</p></div>
+      <div class="s"><div class="ic">🎓</div><h3>Training &amp; Development</h3><p>Leadership, soft skills and compliance training for your teams.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="jobs" style="padding-top:0">
+  <div class="wrap">
+    <div class="h"><span class="k">Current openings</span><h2>Latest jobs</h2><p style="font-size:.85rem">Sample listings for concept design</p></div>
+    <div class="jobs">
+      <div class="job"><span><b>Senior Accountant</b><span class="tags"><span>Lahore</span><span>Full-time</span><span>4+ yrs</span></span></span><span class="sal">PKR 180–220k</span><a class="btn s" href="#cv">Apply</a></div>
+      <div class="job"><span><b>HR Business Partner</b><span class="tags"><span>Karachi</span><span>Full-time</span><span>5+ yrs</span></span></span><span class="sal">PKR 250–300k</span><a class="btn s" href="#cv">Apply</a></div>
+      <div class="job"><span><b>Sales Executive</b><span class="tags"><span>Islamabad</span><span>Full-time</span><span>1+ yr</span></span></span><span class="sal">PKR 80k + commission</span><a class="btn s" href="#cv">Apply</a></div>
+      <div class="job"><span><b>Digital Marketing Officer</b><span class="tags"><span>Remote</span><span>Contract</span><span>2+ yrs</span></span></span><span class="sal">PKR 120–150k</span><a class="btn s" href="#cv">Apply</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="cv" style="padding-top:0">
+  <div class="wrap">
+    <div class="cv">
+      <div><span class="k" style="color:#5EEAD4">Get in touch</span><h2>Submit your CV or hiring request</h2><p>Job seekers: upload your CV once and we'll match you with suitable roles. Employers: tell us who you need and we'll call you back.</p></div>
+      <form>
+        <label>I am a<select><option>Job seeker</option><option>Employer</option></select></label>
+        <label>Full name<input required></label>
+        <label>Email<input type="email" required></label>
+        <label>Phone<input type="tel"></label>
+        <label class="full">Upload CV (PDF)<input type="file" accept=".pdf,.doc,.docx"></label>
+        <div class="full"><button class="btn p" type="submit" style="background:#5EEAD4;color:var(--ink)">Submit</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>TalentBridge HR (fictional firm) · Candidates and jobs shown are samples</span><span>Website concept by <a href="../../index.html" style="color:var(--indigo);font-weight:700">Parha Likha Pakistan</a></span></div></footer>
+<script>
+document.querySelectorAll('.switch button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.switch button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.panel').forEach(p=>p.hidden=p.dataset.panel!==b.dataset.p);}));
+</script>
+<script src="../concept.js"></script>
+</body>
+</html>

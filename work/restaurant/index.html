@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saffron &amp; Coal | Concept Restaurant Website by PLP</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Concept website for a fictional Karachi BBQ restaurant, designed by Parha Likha Pakistan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120d0a;--bg2:#1c1410;--card:#241a14;--saffron:#F2A33A;--ember:#E2552D;--cream:#F6EBDD;--muted:#B9A796;--line:rgba(246,235,221,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font:400 16px/1.7 Inter,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.15;margin:0 0 .5em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:4px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.82rem;border:1.5px solid var(--saffron);transition:.2s;cursor:pointer}
+.btn-fill{background:var(--saffron);color:#1a1008}.btn-fill:hover{background:#ffb954}
+.btn-line{color:var(--saffron)}.btn-line:hover{background:var(--saffron);color:#1a1008}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(18,13,10,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Playfair Display",serif;font-size:1.45rem;font-weight:800}
+.logo i{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--saffron),var(--ember));display:grid;place-items:center;font-style:normal;font-size:1rem;color:#1a1008}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:.9rem;font-weight:500}
+nav a:hover{color:var(--saffron)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--cream);border-radius:6px;padding:8px 12px;font:inherit}
+/* hero */
+.hero{position:relative;min-height:86vh;display:grid;align-items:center;overflow:hidden;
+  background:radial-gradient(60% 70% at 78% 55%,rgba(226,85,45,.45),transparent 60%),radial-gradient(40% 50% at 70% 70%,rgba(242,163,58,.35),transparent 70%),linear-gradient(180deg,#120d0a,#1c1410)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:60px;padding-bottom:80px}
+.kick{color:var(--saffron);letter-spacing:.3em;text-transform:uppercase;font-size:.75rem;font-weight:600;margin-bottom:18px}
+.hero h1{font-size:clamp(2.6rem,6vw,5rem);font-weight:800}
+.hero h1 em{color:var(--saffron);font-weight:600}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:520px;margin-bottom:34px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-meta{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap}
+.hero-meta b{display:block;font-family:"Playfair Display",serif;font-size:1.7rem;color:var(--saffron)}
+.hero-meta span{font-size:.82rem;color:var(--muted)}
+.plate{position:relative;aspect-ratio:1;width:100%;max-width:460px;margin-left:auto;border-radius:50%;
+  background:radial-gradient(circle at 50% 50%,#2c201a 0 58%,#3a2a20 58% 62%,#241a14 62%);box-shadow:0 40px 80px rgba(0,0,0,.6),inset 0 0 0 10px #2f231c}
+.plate svg{position:absolute;inset:14%}
+.steam{position:absolute;top:-10%;left:50%;width:40%;transform:translateX(-50%);opacity:.5}
+/* sections */
+section{padding:100px 0}
+.center{text-align:center;max-width:640px;margin:0 auto 54px}
+.center h2,.split h2{font-size:clamp(2rem,4vw,3rem)}
+.center p{color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-art{aspect-ratio:4/5;border-radius:200px 200px 8px 8px;background:linear-gradient(160deg,#3a2414,#120d0a);border:1px solid var(--line);position:relative;overflow:hidden}
+.story-art::after{content:"Since 2014";position:absolute;bottom:26px;left:26px;font-family:"Playfair Display",serif;font-style:italic;font-size:1.6rem;color:var(--saffron)}
+.story-art svg{position:absolute;inset:18% 12% auto;width:76%}
+.split p{color:var(--muted)}
+.sig{font-family:"Playfair Display",serif;font-style:italic;font-size:1.3rem;color:var(--saffron);margin-top:20px}
+/* menu */
+.tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.tabs button{background:none;border:1px solid var(--line);color:var(--cream);padding:10px 20px;border-radius:999px;font:500 .9rem Inter,sans-serif;cursor:pointer}
+.tabs button.on{background:var(--saffron);color:#1a1008;border-color:var(--saffron)}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:6px 60px;max-width:960px;margin:0 auto}
+.menu[hidden]{display:none}
+.dish{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.dish h3{font-size:1.2rem;margin:0}
+.dish .price{font-family:"Playfair Display",serif;color:var(--saffron);font-size:1.15rem;white-space:nowrap}
+.dish p{grid-column:1/-1;margin:0;color:var(--muted);font-size:.92rem}
+.tag{font:600 .65rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);border:1px solid var(--ember);padding:2px 7px;border-radius:3px;margin-left:8px;vertical-align:middle}
+/* specials */
+.bg2{background:var(--bg2)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:34px 28px;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--saffron)}
+.card .ic{font-size:2rem;margin-bottom:14px}
+.card p{color:var(--muted);margin:0}
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review{padding:30px;border-left:2px solid var(--saffron);background:linear-gradient(90deg,rgba(242,163,58,.06),transparent)}
+.review p{font-family:"Playfair Display",serif;font-style:italic;font-size:1.1rem;margin:0 0 16px}
+.review span{font-size:.85rem;color:var(--muted)}
+.stars{color:var(--saffron);letter-spacing:3px;margin-bottom:10px}
+.sample{display:block;text-align:center;color:var(--muted);font-size:.8rem;margin-top:22px}
+/* reserve */
+.reserve{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:50px}
+.reserve ul{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px;color:var(--muted)}
+.reserve li b{color:var(--cream);display:block}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:grid;gap:6px}
+input,select,textarea{font:inherit;background:#1a120e;border:1px solid var(--line);color:var(--cream);padding:13px 14px;border-radius:6px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--saffron)}
+.full{grid-column:1/-1}
+footer{border-top:1px solid var(--line);padding:50px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.wa{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 24px rgba(37,211,102,.4);z-index:40}
+@media(max-width:900px){
+  .menu-btn{display:block}
+  nav ul{display:none;position:absolute;left:0;right:0;top:74px;flex-direction:column;gap:0;background:var(--bg2);padding:10px 20px 20px;border-bottom:1px solid var(--line)}
+  nav.open ul{display:flex}nav ul a{display:block;padding:12px 0}
+  .hero .wrap,.split,.reserve{grid-template-columns:1fr}.plate{margin:0 auto;max-width:340px}
+  .cards,.reviews{grid-template-columns:1fr}.menu{grid-template-columns:1fr}
+  section{padding:70px 0}.reserve{padding:28px 20px}
+}
+@media(max-width:560px){form{grid-template-columns:1fr}.hero-meta{gap:22px}.nav>.btn{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><i>✦</i> Saffron &amp; Coal</a>
+    <nav data-nav aria-label="Main">
+      <ul><li><a href="#story">Our Story</a></li><li><a href="#menu">Menu</a></li><li><a href="#specials">Experience</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#reserve">Reserve</a></li></ul>
+    </nav>
+    <a class="btn btn-fill" href="#reserve" style="padding:11px 18px">Book a Table</a>
+    <button class="menu-btn" data-menu aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kick">Charcoal Grill · Clifton, Karachi</p>
+      <h1>Slow fire.<br><em>Bold</em> flavour.</h1>
+      <p>Hand-marinated tikkas, sizzling karahis and fresh tandoori breads, cooked over real charcoal the way our grandfathers did it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-fill" href="#reserve">Reserve a Table</a>
+        <a class="btn btn-line" href="#menu">View Menu</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>40+</b><span>Signature dishes</span></div>
+        <div><b>6pm–1am</b><span>Open every day</span></div>
+        <div><b>Free</b><span>Home delivery 5 km</span></div>
+      </div>
+    </div>
+    <div class="plate" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="90" fill="#3b2a1f"/>
+        <path d="M30 120c25-30 55-38 90-28s40 12 52 2" stroke="#7a3b1c" stroke-width="16" fill="none" stroke-linecap="round"/>
+        <g fill="#C8622E"><rect x="52" y="70" width="26" height="22" rx="7" transform="rotate(-12 65 81)"/><rect x="84" y="62" width="26" height="22" rx="7" transform="rotate(8 97 73)"/><rect x="116" y="70" width="26" height="22" rx="7" transform="rotate(-5 129 81)"/></g>
+        <g fill="#E2552D" opacity=".75"><circle cx="66" cy="78" r="4"/><circle cx="100" cy="70" r="4"/><circle cx="130" cy="80" r="4"/></g>
+        <path d="M40 76h120" stroke="#cfcfcf" stroke-width="3"/>
+        <g fill="#7BB661"><circle cx="70" cy="135" r="6"/><circle cx="84" cy="142" r="5"/><circle cx="60" cy="146" r="4"/></g>
+        <g fill="#F6EBDD"><ellipse cx="128" cy="138" rx="18" ry="7" transform="rotate(-20 128 138)"/><ellipse cx="146" cy="128" rx="10" ry="5" transform="rotate(-20 146 128)" fill="#F2A33A"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap split">
+    <div class="story-art" aria-hidden="true">
+      <svg viewBox="0 0 200 160"><path d="M20 140h160" stroke="#F2A33A" stroke-width="2"/><path d="M50 140c0-40 20-70 50-90 30 20 50 50 50 90" fill="none" stroke="#F2A33A" stroke-width="2"/><path d="M80 120c0-20 10-35 20-45 10 10 20 25 20 45" fill="#E2552D" opacity=".8"/><path d="M90 125c0-12 5-20 10-26 5 6 10 14 10 26" fill="#F2A33A"/></svg>
+    </div>
+    <div>
+      <p class="kick">Our Story</p>
+      <h2>Three generations of fire and spice</h2>
+      <p>What started as a small roadside grill in Burns Road is today one of Clifton's favourite family dining spots. Our recipes haven't changed: fresh meat delivered every morning, spices ground in-house and every dish cooked to order over live charcoal.</p>
+      <p>Whether it's a family dinner, a birthday or a corporate gathering, our team makes every visit feel like coming home.</p>
+      <p class="sig">— The Saffron &amp; Coal Family</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="bg2">
+  <div class="wrap">
+    <div class="center"><p class="kick">The Menu</p><h2>Signature dishes</h2><p>Prices in PKR. Ask our team about today's specials.</p></div>
+    <div class="tabs" role="tablist">
+      <button class="on" data-tab="bbq">BBQ &amp; Grill</button><button data-tab="karahi">Karahi &amp; Handi</button><button data-tab="sides">Breads &amp; Sides</button><button data-tab="drinks">Drinks &amp; Desserts</button>
+    </div>
+    <div class="menu" data-panel="bbq">
+      <div class="dish"><h3>Chicken Malai Boti <span class="tag">Bestseller</span></h3><span class="price">1,250</span><p>Cream, cheese and green cardamom marinade, charcoal-kissed.</p></div>
+      <div class="dish"><h3>Beef Seekh Kabab</h3><span class="price">1,150</span><p>Hand-minced beef with fresh herbs and our house garam masala.</p></div>
+      <div class="dish"><h3>Mutton Chops</h3><span class="price">2,400</span><p>Overnight-marinated chops grilled to a smoky char.</p></div>
+      <div class="dish"><h3>Fish Tikka <span class="tag">Spicy</span></h3><span class="price">1,650</span><p>Boneless fish in ajwain and red chilli rub.</p></div>
+      <div class="dish"><h3>Mixed Grill Platter</h3><span class="price">4,900</span><p>Malai boti, seekh, chops and tikka for 3–4 people.</p></div>
+      <div class="dish"><h3>Chicken Tikka Leg</h3><span class="price">850</span><p>Classic Karachi-style tikka with mint chutney.</p></div>
+    </div>
+    <div class="menu" data-panel="karahi" hidden>
+      <div class="dish"><h3>Chicken Karahi (full)</h3><span class="price">2,600</span><p>Tomatoes, green chillies and fresh ginger, cooked in the wok.</p></div>
+      <div class="dish"><h3>Mutton Karahi (full) <span class="tag">Chef's pick</span></h3><span class="price">4,800</span><p>Slow-cooked tender mutton in a rich, peppery gravy.</p></div>
+      <div class="dish"><h3>Chicken White Handi</h3><span class="price">2,400</span><p>Creamy yoghurt and black pepper handi.</p></div>
+      <div class="dish"><h3>Daal Makhni</h3><span class="price">950</span><p>Black lentils simmered overnight with butter.</p></div>
+    </div>
+    <div class="menu" data-panel="sides" hidden>
+      <div class="dish"><h3>Garlic Naan</h3><span class="price">180</span><p>Fresh from the tandoor, brushed with garlic butter.</p></div>
+      <div class="dish"><h3>Roghni Naan</h3><span class="price">150</span><p>Soft, sesame-topped tandoori bread.</p></div>
+      <div class="dish"><h3>Raita &amp; Salad</h3><span class="price">250</span><p>Mint raita with kachumber salad.</p></div>
+      <div class="dish"><h3>Chicken Pulao</h3><span class="price">850</span><p>Fragrant yakhni rice with tender chicken.</p></div>
+    </div>
+    <div class="menu" data-panel="drinks" hidden>
+      <div class="dish"><h3>Mint Margarita</h3><span class="price">450</span><p>Fresh mint, lime and crushed ice.</p></div>
+      <div class="dish"><h3>Doodh Patti Chai</h3><span class="price">200</span><p>Strong, creamy and slow-brewed.</p></div>
+      <div class="dish"><h3>Gajar Halwa</h3><span class="price">550</span><p>Warm carrot halwa with khoya (seasonal).</p></div>
+      <div class="dish"><h3>Kulfi Falooda</h3><span class="price">600</span><p>Pistachio kulfi, vermicelli and rose syrup.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="specials">
+  <div class="wrap">
+    <div class="center"><p class="kick">The Experience</p><h2>More than a meal</h2></div>
+    <div class="cards">
+      <div class="card"><div class="ic">👨‍👩‍👧‍👦</div><h3>Family Hall</h3><p>Spacious family seating for up to 120 guests, with a kids' corner.</p></div>
+      <div class="card"><div class="ic">🎉</div><h3>Events &amp; Catering</h3><p>Birthdays, office dinners and outdoor catering with live BBQ stations.</p></div>
+      <div class="card"><div class="ic">🛵</div><h3>Fast Delivery</h3><p>Hot food at your door. Order on WhatsApp in under a minute.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="bg2">
+  <div class="wrap">
+    <div class="center"><p class="kick">Guests Say</p><h2>Loved across Karachi</h2></div>
+    <div class="reviews">
+      <div class="review"><div class="stars">★★★★★</div><p>“The malai boti melts in your mouth. Best family dinner spot in Clifton.”</p><span>Sample review</span></div>
+      <div class="review"><div class="stars">★★★★★</div><p>“Ordered the mixed platter for our office. Hot, on time and delicious.”</p><span>Sample review</span></div>
+      <div class="review"><div class="stars">★★★★★</div><p>“Proper charcoal flavour. The mutton karahi is a must-try.”</p><span>Sample review</span></div>
+    </div>
+    <small class="sample">Reviews shown are sample text for this concept design.</small>
+  </div>
+</section>
+
+<section id="reserve">
+  <div class="wrap reserve">
+    <div>
+      <p class="kick">Reservations</p>
+      <h2>Book your table</h2>
+      <p style="color:var(--muted)">Reserve online or message us on WhatsApp. We'll confirm within minutes.</p>
+      <ul>
+        <li><b>Address</b>Block 5, Clifton, Karachi</li>
+        <li><b>Hours</b>Daily, 6:00 pm – 1:00 am</li>
+        <li><b>Phone / WhatsApp</b>0300 0000000 (demo)</li>
+      </ul>
+    </div>
+    <form>
+      <label>Name<input required></label>
+      <label>Phone<input type="tel" required></label>
+      <label>Date<input type="date" required></label>
+      <label>Time<select><option>7:00 pm</option><option>8:00 pm</option><option>9:00 pm</option><option>10:00 pm</option></select></label>
+      <label>Guests<select><option>2</option><option>3–4</option><option>5–8</option><option>9+</option></select></label>
+      <label>Seating<select><option>Family hall</option><option>Rooftop</option><option>No preference</option></select></label>
+      <label class="full">Special request<textarea rows="3"></textarea></label>
+      <div class="full"><button class="btn btn-fill" type="submit">Request Booking</button></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#"><i>✦</i> Saffron &amp; Coal</a>
+    <span>© Saffron &amp; Coal (fictional) · Website concept by <a href="../../index.html" style="color:var(--saffron)">Parha Likha Pakistan</a></span>
+  </div>
+</footer>
+<a class="wa" href="#" data-demo="Demo only: on a real site, this opens WhatsApp chat with the restaurant." aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+<script>
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('[data-panel]').forEach(p=>p.hidden=p.dataset.panel!==b.dataset.tab);
+}));
+</script>
+<script src="../concept.js"></script>
+</body>
+</html>

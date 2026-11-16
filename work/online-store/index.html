@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DailyDukaan | Concept Online Shopping Store Website by PLP</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#F57224;--orange-d:#D85F14;--blue:#1A56DB;--ink:#1F2937;--text:#4B5563;--bg:#F3F4F6;--line:#E5E7EB;--green:#16A34A;--red:#DC2626}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.55 "Nunito Sans",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{color:var(--ink);margin:0 0 .4em;line-height:1.2}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+.top{background:var(--ink);color:#D1D5DB;font-size:.8rem}
+.top .wrap{display:flex;justify-content:space-between;padding:6px 16px;gap:10px;flex-wrap:wrap}
+header{background:var(--orange);position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.bar{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;height:70px}
+.logo{font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+.logo span{color:#FFE08A}
+.search{display:flex;background:#fff;border-radius:8px;overflow:hidden}
+.search input{flex:1;border:0;padding:12px 14px;font:inherit;min-width:0}
+.search input:focus{outline:none}
+.search button{border:0;background:#FFE08A;padding:0 20px;font-weight:800;color:var(--ink);cursor:pointer}
+.acts{display:flex;gap:16px;color:#fff;font-weight:700;align-items:center}
+.cart{position:relative;display:inline-flex;align-items:center;gap:6px}
+.cart b{position:absolute;top:-8px;right:-12px;background:#fff;color:var(--orange);border-radius:999px;font-size:.72rem;padding:1px 6px}
+.catnav{background:#fff;border-bottom:1px solid var(--line);overflow-x:auto}
+.catnav ul{display:flex;gap:26px;list-style:none;margin:0 auto;padding:12px 16px;max-width:1240px;font-weight:700;color:var(--ink);white-space:nowrap}
+.catnav a:hover{color:var(--orange)}
+.grid-hero{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin:16px auto}
+.banner{border-radius:12px;padding:40px;color:#fff;position:relative;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:center}
+.banner.main{background:linear-gradient(120deg,#1A56DB,#7C3AED)}
+.banner h1{color:#fff;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;max-width:460px}
+.banner p{max-width:420px;font-size:1.05rem;opacity:.9}
+.banner .btn{align-self:flex-start;background:#fff;color:var(--blue);font-weight:800;border-radius:8px;padding:12px 22px;margin-top:10px}
+.banner .big{position:absolute;right:30px;bottom:-30px;font-size:12rem;font-weight:900;opacity:.12;line-height:1}
+.side{display:grid;gap:14px}
+.side .banner{min-height:0;padding:24px}
+.side .b1{background:linear-gradient(120deg,#F57224,#F59E0B)}.side .b2{background:linear-gradient(120deg,#059669,#10B981)}
+.side h3{color:#fff;font-size:1.25rem;font-weight:900}
+.cats{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;background:#fff;border-radius:12px;padding:18px}
+.cat{text-align:center;font-weight:700;font-size:.82rem;color:var(--ink)}
+.cat i{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 8px;border-radius:50%;font-style:normal;font-size:1.6rem}
+.cat:hover i{transform:scale(1.08)}
+.block{background:#fff;border-radius:12px;padding:20px;margin:16px 0}
+.bhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.bhead h2{font-size:1.35rem;font-weight:900;margin:0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.timer{display:inline-flex;gap:4px;font-size:.9rem}
+.timer span{background:var(--red);color:#fff;border-radius:4px;padding:2px 7px;font-weight:800;font-variant-numeric:tabular-nums}
+.bhead a{color:var(--orange);font-weight:800}
+.prods{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.pd{border:1px solid var(--line);border-radius:10px;padding:10px;transition:.2s;display:flex;flex-direction:column}
+.pd:hover{box-shadow:0 8px 20px rgba(0,0,0,.08);border-color:transparent}
+.pd .im{aspect-ratio:1;border-radius:8px;display:grid;place-items:center;font-size:3rem;margin-bottom:8px;position:relative}
+.pd .off{position:absolute;top:6px;left:6px;background:var(--red);color:#fff;font-size:.7rem;font-weight:800;border-radius:4px;padding:1px 6px}
+.pd h3{font-size:.86rem;font-weight:600;line-height:1.35;height:2.7em;overflow:hidden}
+.pd .price{color:var(--orange);font-weight:900;font-size:1.05rem}
+.pd s{font-size:.8rem;color:#9CA3AF;margin-left:6px}
+.pd .rt{font-size:.75rem;color:#9CA3AF}
+.pd button{margin-top:8px;border:0;background:var(--orange);color:#fff;font-weight:800;border-radius:6px;padding:8px;cursor:pointer}
+.pd button:hover{background:var(--orange-d)}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.trust div{background:#fff;border-radius:12px;padding:18px;display:flex;gap:12px;align-items:center;font-size:.86rem}
+.trust i{font-style:normal;font-size:1.6rem}
+.trust b{display:block;color:var(--ink)}
+footer{background:var(--ink);color:#9CA3AF;padding:30px 0;margin-top:20px;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:1000px){.prods{grid-template-columns:repeat(3,1fr)}.cats{grid-template-columns:repeat(4,1fr)}.grid-hero{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.trust{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.bar{grid-template-columns:1fr auto;height:auto;padding:10px 16px;gap:10px}.search{grid-column:1/-1;order:3}.acts .acc{display:none}.prods{grid-template-columns:1fr 1fr}.side{grid-template-columns:1fr}.banner{padding:26px}.trust{grid-template-columns:1fr}.top .wrap{justify-content:center}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>🚚 Free delivery on orders over PKR 2,999</span><span>Sell on DailyDukaan · Help · Track order</span></div></div>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#">Daily<span>Dukaan</span></a>
+    <form class="search" role="search"><input placeholder="Search for products, brands and more" aria-label="Search"><button type="submit">Search</button></form>
+    <div class="acts"><span class="acc">Login</span><a class="cart" href="#" data-demo="Demo only: a real store would open the cart and checkout.">🛒 Cart<b data-cart-count>0</b></a></div>
+  </div>
+</header>
+<nav class="catnav" aria-label="Categories"><ul><li><a href="#deals">Flash Sale</a></li><li><a href="#">Electronics</a></li><li><a href="#">Fashion</a></li><li><a href="#">Home &amp; Kitchen</a></li><li><a href="#">Groceries</a></li><li><a href="#">Beauty</a></li><li><a href="#">Kids &amp; Toys</a></li><li><a href="#">Sports</a></li></ul></nav>
+
+<div class="wrap">
+  <div class="grid-hero">
+    <div class="banner main"><span class="big" aria-hidden="true">11.11</span><h1>Mega Sale: up to 60% off</h1><p>Thousands of deals on electronics, fashion and home. Cash on delivery available nationwide.</p><a class="btn" href="#deals">Shop the Sale</a></div>
+    <div class="side"><div class="banner b1"><h3>Kitchen Week</h3><p>Cookware from PKR 999</p></div><div class="banner b2"><h3>Fresh Groceries</h3><p>Same-day delivery in Lahore</p></div></div>
+  </div>
+
+  <div class="cats">
+    <a class="cat" href="#"><i style="background:#DBEAFE">📱</i>Mobiles</a><a class="cat" href="#"><i style="background:#FCE7F3">👗</i>Women</a><a class="cat" href="#"><i style="background:#E0E7FF">👔</i>Men</a><a class="cat" href="#"><i style="background:#FEF3C7">🏠</i>Home</a>
+    <a class="cat" href="#"><i style="background:#DCFCE7">🛒</i>Grocery</a><a class="cat" href="#"><i style="background:#FFE4E6">💄</i>Beauty</a><a class="cat" href="#"><i style="background:#FEF9C3">🧸</i>Toys</a><a class="cat" href="#"><i style="background:#E0F2FE">⚽</i>Sports</a>
+  </div>
+
+  <div class="block" id="deals">
+    <div class="bhead"><h2>⚡ Flash Sale <span class="timer" aria-label="Ends in"><span id="h">05</span>:<span id="m">42</span>:<span id="s">18</span></span></h2><a href="#">See all →</a></div>
+    <div class="prods">
+      <div class="pd"><div class="im" style="background:#EFF6FF"><span class="off">-35%</span>🎧</div><h3>Wireless Earbuds with Noise Cancelling</h3><div><span class="price">Rs 3,899</span><s>5,999</s></div><span class="rt">★ 4.6 (sample)</span><button data-add="Wireless Earbuds">Add to cart</button></div>
+      <div class="pd"><div class="im" style="background:#FDF2F8"><span class="off">-50%</span>👜</div><h3>Women's Leather Shoulder Bag</h3><div><span class="price">Rs 2,499</span><s>4,999</s></div><span class="rt">★ 4.4 (sample)</span><button data-add="Shoulder Bag">Add to cart</button></div>
+      <div class="pd"><div class="im" style="background:#FFFBEB"><span class="off">-28%</span>🍳</div><h3>Non-Stick Cookware Set (5 pcs)</h3><div><span class="price">Rs 6,450</span><s>8,950</s></div><span class="rt">★ 4.7 (sample)</span><button data-add="Cookware Set">Add to cart</button></div>
+      <div class="pd"><div class="im" style="background:#ECFDF5"><span class="off">-20%</span>⌚</div><h3>Smart Watch with Heart Rate</h3><div><span class="price">Rs 4,799</span><s>5,999</s></div><span class="rt">★ 4.3 (sample)</span><button data-add="Smart Watch">Add to cart</button></div>
+      <div class="pd"><div class="im" style="background:#F5F3FF"><span class="off">-40%</span>👟</div><h3>Men's Running Shoes</h3><div><span class="price">Rs 3,299</span><s>5,499</s></div><span class="rt">★ 4.5 (sample)</span><button data-add="Running Shoes">Add to cart</button></div>
+      <div class="pd"><div class="im" style="background:#FEF2F2"><span class="off">-15%</span>🧴</div><h3>Skincare Gift Box</h3><div><span class="price">Rs 2,150</span><s>2,550</s></div><span class="rt">★ 4.8 (sample)</span><button data-add="Skincare Gift Box">Add to cart</button></div>
+    </div>
+  </div>
+
+  <div class="trust"><div><i>🚚</i><span><b>Nationwide delivery</b>2–5 working days</span></div><div><i>💵</i><span><b>Cash on delivery</b>Pay when it arrives</span></div><div><i>↩️</i><span><b>7-day returns</b>Easy and free</span></div><div><i>🔒</i><span><b>Secure payments</b>Cards &amp; wallets</span></div></div>
+</div>
+
+<footer><div class="wrap"><span>DailyDukaan (fictional store) · Products, prices and ratings are samples</span><span>Website concept by <a href="../../index.html" style="color:#FFE08A;font-weight:700">Parha Likha Pakistan</a></span></div></footer>
+<script>
+let t=5*3600+42*60+18;setInterval(()=>{t=t>0?t-1:0;const p=n=>String(n).padStart(2,'0');document.getElementById('h').textContent=p(Math.floor(t/3600));document.getElementById('m').textContent=p(Math.floor(t%3600/60));document.getElementById('s').textContent=p(t%60);},1000);
+</script>
+<script src="../concept.js"></script>
+</body>
+</html>

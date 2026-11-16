@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /work/
+Sitemap: https://parhalikhapakistan.com/sitemap.xml

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apex Learning Partners | Concept Corporate Training Website by PLP</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#7A1F2B;--maroon-d:#5C1520;--char:#23262B;--stone:#F4F1EC;--text:#585C63;--line:#E2DDD4;--gold:#C79A3B}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--text);font:400 16px/1.7 "Libre Franklin",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+h1,h2{font-family:"Libre Baskerville",Georgia,serif;color:var(--char);line-height:1.18;margin:0 0 .5em;font-weight:700}
+h3{color:var(--char);margin:0 0 .4em;font-size:1.12rem;font-weight:700}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;font:600 .92rem "Libre Franklin";border:2px solid var(--maroon);cursor:pointer;transition:.2s}
+.btn.m{background:var(--maroon);color:#fff}.btn.m:hover{background:var(--maroon-d);border-color:var(--maroon-d)}
+.btn.o{color:var(--maroon);background:#fff}.btn.o:hover{background:var(--maroon);color:#fff}
+.util{background:var(--char);color:#B8BCC3;font-size:.82rem}
+.util .wrap{display:flex;justify-content:space-between;padding:7px 20px;gap:10px;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{flex-shrink:0}
+.logo b{display:block;font-family:"Libre Baskerville",serif;color:var(--char);font-size:1.15rem}
+.logo small{display:block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);font-weight:600}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:600;color:var(--char);font-size:.95rem}
+nav a:hover{color:var(--maroon)}
+.menu-btn{display:none;background:var(--stone);border:0;padding:9px 14px;font:600 .9rem "Libre Franklin"}
+.hero{background:var(--stone);padding:0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:0;align-items:stretch}
+.hero .l{padding:90px 50px 90px 0}
+.hero .ey{display:inline-block;border-left:3px solid var(--gold);padding-left:12px;font-weight:600;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);margin-bottom:22px}
+.hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem)}
+.hero p{font-size:1.1rem;max-width:520px;margin-bottom:30px}
+.hero .r{background:var(--maroon);color:#F1DCDF;padding:50px 40px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero .r::before{content:"";position:absolute;top:0;right:0;width:80px;height:80px;background:var(--gold)}
+.figs{display:grid;gap:26px;position:relative}
+.figs b{display:block;font-family:"Libre Baskerville",serif;font-size:2.6rem;color:#fff;line-height:1}
+.figs span{font-size:.92rem}
+.trusted{padding:36px 0;border-bottom:1px solid var(--line)}
+.trusted .wrap{display:flex;align-items:center;gap:20px 46px;flex-wrap:wrap;justify-content:center;font-family:"Libre Baskerville",serif;font-size:1.1rem;color:#A9A49B}
+.trusted small{font:600 .75rem "Libre Franklin";letter-spacing:.14em;text-transform:uppercase;color:var(--text)}
+section{padding:90px 0}
+.h{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:46px}
+.h h2{font-size:clamp(2rem,4vw,2.8rem);margin:0}
+.h p{margin:0}
+.progs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.pg{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.2s;position:relative}
+.pg::before{content:"";position:absolute;left:0;top:0;width:3px;height:0;background:var(--maroon);transition:.3s}
+.pg:hover::before{height:100%}
+.pg .cat{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.pg p{font-size:.93rem;margin:0 0 12px}
+.pg .meta{font-size:.82rem;font-weight:600;color:var(--char)}
+.cal{background:var(--stone)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:.94rem}
+th{background:var(--char);color:#fff;text-align:left;padding:14px 18px;font-weight:600}
+td{padding:16px 18px;border-bottom:1px solid var(--line)}
+td:first-child{font-weight:700;color:var(--maroon);white-space:nowrap}
+td .seat{display:inline-block;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:999px;background:#E8F5EC;color:#1E6B3A}
+td .seat.low{background:#FDECEE;color:var(--maroon)}
+.tw{overflow-x:auto;border:1px solid var(--line)}
+.formats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.f{border:1px solid var(--line);padding:26px;text-align:left}
+.f .n{font-family:"Libre Baskerville",serif;font-size:1.8rem;color:var(--gold);line-height:1;margin-bottom:12px}
+.f p{margin:0;font-size:.92rem}
+.rfp{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--stone);padding:34px;border-top:4px solid var(--maroon)}
+label{display:grid;gap:6px;font-weight:600;font-size:.88rem;color:var(--char)}
+input,select,textarea{font:400 1rem "Libre Franklin";border:1px solid var(--line);background:#fff;padding:12px 13px;width:100%;color:var(--char)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--maroon)}
+.full{grid-column:1/-1}
+blockquote{margin:30px 0 0;padding:24px;border-left:3px solid var(--gold);background:var(--stone);font-family:"Libre Baskerville",serif;font-style:italic;color:var(--char)}
+blockquote small{display:block;font:500 .82rem "Libre Franklin";font-style:normal;color:var(--text);margin-top:10px}
+footer{background:var(--char);color:#9EA3AB;padding:36px 0;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:960px){
+  .menu-btn{display:block}nav{position:absolute;top:80px;left:0;right:0}
+  nav ul{display:none;flex-direction:column;gap:0;background:#fff;padding:6px 20px 18px;border-bottom:1px solid var(--line)}
+  nav.open ul{display:flex}nav ul a{display:block;padding:12px 0}
+  .nav>.btn{display:none}
+  .hero .wrap,.h,.rfp{grid-template-columns:1fr}.hero .l{padding:60px 0}.hero .r{margin:0 -20px;padding:40px 24px}
+  .progs{grid-template-columns:1fr 1fr}.formats{grid-template-columns:1fr 1fr}section{padding:70px 0}
+}
+@media(max-width:600px){.progs,.formats,form{grid-template-columns:1fr}form{padding:22px}}
+</style>
+</head>
+<body>
+<div class="util"><div class="wrap"><span>Karachi · Lahore · Islamabad · Dubai</span><span>Request a training proposal: proposals@apex-demo.example</span></div></div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 3 37 37H3Z" fill="#7A1F2B"/><path d="M20 15 29 33H11Z" fill="#C79A3B"/></svg><span><b>Apex Learning</b><small>Partners</small></span></a>
+    <nav data-nav aria-label="Main"><ul><li><a href="#programs">Programs</a></li><li><a href="#calendar">Calendar</a></li><li><a href="#formats">Formats</a></li><li><a href="#rfp">Contact</a></li></ul></nav>
+    <a class="btn m" href="#rfp">Request a Proposal</a>
+    <button class="menu-btn" data-menu aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="l">
+      <span class="ey">Corporate Learning &amp; Development</span>
+      <h1>Building leaders and high-performing teams since 2008</h1>
+      <p>Customised leadership, sales, service and compliance programs for banks, telcos, FMCG and public-sector organisations across Pakistan and the GCC.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn m" href="#programs">Explore Programs</a><a class="btn o" href="#calendar">Public Workshops</a></div>
+    </div>
+    <div class="r">
+      <div class="figs"><div><b>250+</b><span>Organisations served (sample)</span></div><div><b>40,000</b><span>Professionals trained (sample)</span></div><div><b>60+</b><span>Ready-to-run programs</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="trusted"><div class="wrap"><small>Trusted by teams at</small><span>Meridian Bank</span><span>Indus Telecom</span><span>Crescent Foods</span><span>Al-Noor Pharma</span><span>Harbor Logistics</span></div></div>
+
+<section id="programs">
+  <div class="wrap">
+    <div class="h"><h2>Flagship programs</h2><p>Every program is adapted to your industry, culture and goals, and delivered by certified facilitators.</p></div>
+    <div class="progs">
+      <div class="pg"><span class="cat">Leadership</span><h3>Leading High-Performance Teams</h3><p>Coaching, delegation and accountability for new and mid-level managers.</p><span class="meta">2 days · Managers</span></div>
+      <div class="pg"><span class="cat">Sales</span><h3>Consultative Selling Mastery</h3><p>Needs discovery, objection handling and closing for B2B sales teams.</p><span class="meta">2 days · Sales teams</span></div>
+      <div class="pg"><span class="cat">Service</span><h3>Customer Experience Excellence</h3><p>Service standards, complaint handling and empathy at every touchpoint.</p><span class="meta">1 day · Front-line staff</span></div>
+      <div class="pg"><span class="cat">Communication</span><h3>Executive Presence &amp; Presentations</h3><p>Confident speaking, storytelling and boardroom presentations.</p><span class="meta">2 days · Leaders</span></div>
+      <div class="pg"><span class="cat">Compliance</span><h3>Workplace Ethics &amp; Harassment Prevention</h3><p>Policies, scenarios and reporting for a safe, respectful workplace.</p><span class="meta">Half day · All staff</span></div>
+      <div class="pg"><span class="cat">Digital</span><h3>AI &amp; Digital Skills for Professionals</h3><p>Practical AI tools, Excel and productivity skills for the modern office.</p><span class="meta">1–2 days · All levels</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="calendar" class="cal">
+  <div class="wrap">
+    <div class="h"><h2>Public workshop calendar</h2><p>Open enrolment workshops for individuals and small teams. Sample schedule for concept design.</p></div>
+    <div class="tw"><table>
+      <thead><tr><th>Date</th><th>Workshop</th><th>City</th><th>Seats</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>14–15 Jan</td><td>Leading High-Performance Teams</td><td>Karachi</td><td><span class="seat">12 left</span></td><td><a class="btn o" href="#rfp" style="padding:8px 14px">Register</a></td></tr>
+        <tr><td>21 Jan</td><td>Customer Experience Excellence</td><td>Lahore</td><td><span class="seat low">3 left</span></td><td><a class="btn o" href="#rfp" style="padding:8px 14px">Register</a></td></tr>
+        <tr><td>4–5 Feb</td><td>Consultative Selling Mastery</td><td>Islamabad</td><td><span class="seat">9 left</span></td><td><a class="btn o" href="#rfp" style="padding:8px 14px">Register</a></td></tr>
+        <tr><td>18 Feb</td><td>AI &amp; Digital Skills for Professionals</td><td>Online</td><td><span class="seat">20 left</span></td><td><a class="btn o" href="#rfp" style="padding:8px 14px">Register</a></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section id="formats">
+  <div class="wrap">
+    <div class="h"><h2>Flexible delivery formats</h2><p>Choose what works for your people and your calendar.</p></div>
+    <div class="formats">
+      <div class="f"><div class="n">I</div><h3>In-house</h3><p>Customised programs delivered at your premises.</p></div>
+      <div class="f"><div class="n">II</div><h3>Public workshops</h3><p>Open-enrolment sessions in major cities.</p></div>
+      <div class="f"><div class="n">III</div><h3>Virtual live</h3><p>Interactive online sessions for distributed teams.</p></div>
+      <div class="f"><div class="n">IV</div><h3>Learning journeys</h3><p>Multi-month blended programs with coaching.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rfp" style="padding-top:0">
+  <div class="wrap rfp">
+    <div>
+      <h2 style="font-size:clamp(2rem,4vw,2.6rem)">Request a training proposal</h2>
+      <p>Share your objectives and audience. Our learning consultants will send a tailored proposal within three working days.</p>
+      <blockquote>“The program was practical, well-paced and directly relevant to our managers' daily challenges.”<small>Sample testimonial for concept design</small></blockquote>
+    </div>
+    <form>
+      <label>Full name<input required></label><label>Organisation<input required></label>
+      <label>Work email<input type="email" required></label><label>Phone<input type="tel"></label>
+      <label>Program area<select><option>Leadership</option><option>Sales</option><option>Customer service</option><option>Communication</option><option>Compliance</option><option>Digital &amp; AI</option></select></label>
+      <label>Participants<select><option>10–20</option><option>21–50</option><option>51–100</option><option>100+</option></select></label>
+      <label class="full">Objectives<textarea rows="3"></textarea></label>
+      <div class="full"><button class="btn m" type="submit">Submit Request</button></div>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Apex Learning Partners (fictional company) · Client names and figures are illustrative</span><span>Website concept by <a href="../../index.html" style="color:var(--gold);font-weight:600">Parha Likha Pakistan</a></span></div></footer>
+<script src="../concept.js"></script>
+</body>
+</html>

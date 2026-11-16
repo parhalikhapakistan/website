@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillForge Academy | Concept Training Academy Website by PLP</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Concept website for a fictional IT and skills training academy, designed by Parha Likha Pakistan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0F0A2A;--violet:#5B3DF5;--violet-d:#3F25C9;--orange:#FF6B2C;--lime:#C6F432;--soft:#F3F1FF;--text:#4E4A6B;--line:#E6E3F5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--text);font:400 16px/1.7 Inter,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;color:var(--ink);line-height:1.08;margin:0 0 .5em;letter-spacing:-.02em}
+h3{font-size:1.25rem;letter-spacing:-.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:14px;font:700 .98rem "Space Grotesk";border:2px solid var(--ink);cursor:pointer;transition:.15s}
+.btn-o{background:var(--orange);color:#fff;box-shadow:4px 4px 0 var(--ink)}
+.btn-o:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn-w{background:#fff;color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn-w:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:2px solid var(--ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font:700 1.35rem "Space Grotesk";color:var(--ink)}
+.logo i{width:38px;height:38px;border-radius:10px;background:var(--violet);border:2px solid var(--ink);display:grid;place-items:center;font-style:normal;color:var(--lime);font-size:1.2rem}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font:600 .95rem "Space Grotesk";color:var(--ink)}
+nav a:hover{color:var(--violet)}
+.menu-btn{display:none;background:var(--lime);border:2px solid var(--ink);border-radius:10px;padding:8px 14px;font:700 .9rem "Space Grotesk"}
+/* hero */
+.hero{background:var(--violet);color:#E1DCFF;padding:80px 0 0;overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1.5px,transparent 1.5px);background-size:26px 26px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
+.hero h1{color:#fff;font-size:clamp(2.8rem,6.2vw,5.4rem)}
+.hl{background:var(--lime);color:var(--ink);padding:0 .15em;border-radius:8px;display:inline-block;transform:rotate(-2deg)}
+.hero p{font-size:1.15rem;max-width:520px;margin-bottom:32px}
+.btns{display:flex;gap:16px;flex-wrap:wrap;padding-bottom:80px}
+.board{background:#fff;border:2px solid var(--ink);border-bottom:0;border-radius:24px 24px 0 0;padding:26px;color:var(--text);box-shadow:8px 0 0 var(--ink)}
+.board h3{font-size:1rem;display:flex;justify-content:space-between;align-items:center}
+.board h3 span{background:var(--orange);color:#fff;font-size:.72rem;padding:4px 10px;border-radius:999px;font-family:Inter}
+.batch{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 0;border-top:1.5px dashed var(--line)}
+.batch .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:1.3rem;border:2px solid var(--ink)}
+.batch b{display:block;color:var(--ink);font-family:"Space Grotesk"}
+.batch small{font-size:.82rem}
+.seats{font:700 .78rem Inter;color:var(--violet-d);background:var(--soft);padding:5px 9px;border-radius:8px;white-space:nowrap}
+/* ticker */
+.ticker{background:var(--ink);color:var(--lime);font:700 1.1rem "Space Grotesk";padding:16px 0;overflow:hidden;white-space:nowrap}
+.ticker span{display:inline-block;animation:t 25s linear infinite}
+@keyframes t{to{transform:translateX(-50%)}}
+section{padding:100px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:46px}
+.head h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:0;max-width:640px}
+.tagline{font:700 .82rem "Space Grotesk";letter-spacing:.12em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:10px}
+/* courses */
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.filters button{font:600 .9rem "Space Grotesk";border:2px solid var(--ink);background:#fff;border-radius:999px;padding:8px 16px;cursor:pointer}
+.filters button.on{background:var(--ink);color:#fff}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.course{border:2px solid var(--ink);border-radius:22px;overflow:hidden;background:#fff;transition:.15s;display:flex;flex-direction:column}
+.course:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+.course .top{height:130px;display:flex;align-items:flex-end;justify-content:space-between;padding:16px 18px;border-bottom:2px solid var(--ink);font-size:2.6rem}
+.course .lvl{font:700 .75rem Inter;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:3px 10px;align-self:flex-start}
+.course .body{padding:22px;display:flex;flex-direction:column;flex:1}
+.course p{font-size:.93rem;margin:0 0 16px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem;font-weight:600;color:var(--ink);margin-top:auto;padding-top:14px;border-top:1.5px dashed var(--line)}
+.meta .fee{margin-left:auto;color:var(--violet-d);font-family:"Space Grotesk";font-size:1rem}
+.course[hidden]{display:none}
+/* why */
+.why{background:var(--soft)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.w{background:#fff;border:2px solid var(--ink);border-radius:20px;padding:26px}
+.w b{display:block;font:700 2.4rem "Space Grotesk";color:var(--violet);line-height:1;margin-bottom:10px}
+.w p{margin:0;font-size:.92rem}
+/* register */
+.reg{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.reg-card{background:var(--lime);border:2px solid var(--ink);border-radius:26px;padding:34px;box-shadow:8px 8px 0 var(--ink)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font:700 .88rem "Space Grotesk";color:var(--ink)}
+input,select,textarea{font:400 1rem Inter;border:2px solid var(--ink);border-radius:12px;padding:12px 14px;background:#fff;width:100%;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;box-shadow:3px 3px 0 var(--violet)}
+.full{grid-column:1/-1}
+.perks{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px;font-weight:500;color:var(--ink)}
+.perks li::before{content:"→";font-weight:700;color:var(--orange);margin-right:10px}
+footer{background:var(--ink);color:#B7B2D6;padding:44px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:980px){
+  .menu-btn{display:block}
+  nav ul{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 20px 18px;border-bottom:2px solid var(--ink)}
+  nav.open ul{display:flex}nav ul a{display:block;padding:12px 0}
+  .nav>.btn{display:none}
+  .hero .wrap,.reg{grid-template-columns:1fr}.btns{padding-bottom:20px}
+  .courses{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr 1fr}section{padding:72px 0}
+}
+@media(max-width:600px){.courses,.grid4,form{grid-template-columns:1fr}.reg-card{padding:22px}.board{box-shadow:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><i>⚡</i>SkillForge</a>
+    <nav data-nav aria-label="Main"><ul><li><a href="#courses">Courses</a></li><li><a href="#why">Why Us</a></li><li><a href="#register">Admissions</a></li></ul></nav>
+    <a class="btn btn-o" href="#register" style="padding:11px 20px">Enroll Now</a>
+    <button class="menu-btn" data-menu aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <div>
+      <h1>Learn skills that <span class="hl">actually pay.</span></h1>
+      <p>Job-ready courses in web development, digital marketing, graphic design and data, taught by industry practitioners in Rawalpindi and online.</p>
+      <div class="btns"><a class="btn btn-o" href="#courses">Browse Courses</a><a class="btn btn-w" href="#register">Free Career Session</a></div>
+    </div>
+    <div class="board">
+      <h3>Upcoming batches <span>Filling fast</span></h3>
+      <div class="batch"><span class="ic" style="background:#FFE3D6">💻</span><span><b>Full-Stack Web Development</b><small>Starts 5 Jan · Evening · 4 months</small></span><span class="seats">6 seats left</span></div>
+      <div class="batch"><span class="ic" style="background:#E9F9C2">📈</span><span><b>Digital Marketing Pro</b><small>Starts 12 Jan · Weekend · 3 months</small></span><span class="seats">9 seats left</span></div>
+      <div class="batch"><span class="ic" style="background:#E3DDFF">🎨</span><span><b>Graphic Design &amp; Branding</b><small>Starts 19 Jan · Morning · 3 months</small></span><span class="seats">4 seats left</span></div>
+    </div>
+  </div>
+</section>
+<div class="ticker" aria-hidden="true"><span>WEB DEVELOPMENT ✦ DIGITAL MARKETING ✦ GRAPHIC DESIGN ✦ DATA ANALYTICS ✦ FREELANCING ✦ AI TOOLS ✦ SPOKEN ENGLISH ✦ WEB DEVELOPMENT ✦ DIGITAL MARKETING ✦ GRAPHIC DESIGN ✦ DATA ANALYTICS ✦ FREELANCING ✦ AI TOOLS ✦ SPOKEN ENGLISH ✦&nbsp;</span></div>
+
+<section id="courses">
+  <div class="wrap">
+    <div class="head"><div><span class="tagline">Courses</span><h2>Pick your path. Build your portfolio.</h2></div>
+      <div class="filters"><button class="on" data-f="all">All</button><button data-f="tech">Tech</button><button data-f="creative">Creative</button><button data-f="business">Business</button></div>
+    </div>
+    <div class="courses">
+      <div class="course" data-c="tech"><div class="top" style="background:#FFE3D6"><span>💻</span><span class="lvl">Beginner → Pro</span></div><div class="body"><h3>Full-Stack Web Development</h3><p>HTML, CSS, JavaScript, React and Node, building 5 real projects.</p><div class="meta"><span>4 months</span><span>Evening</span><span class="fee">PKR 45,000</span></div></div></div>
+      <div class="course" data-c="business"><div class="top" style="background:#E9F9C2"><span>📈</span><span class="lvl">Beginner</span></div><div class="body"><h3>Digital Marketing Pro</h3><p>Social media, Meta ads, Google ads, SEO and analytics with live campaigns.</p><div class="meta"><span>3 months</span><span>Weekend</span><span class="fee">PKR 30,000</span></div></div></div>
+      <div class="course" data-c="creative"><div class="top" style="background:#E3DDFF"><span>🎨</span><span class="lvl">Beginner</span></div><div class="body"><h3>Graphic Design &amp; Branding</h3><p>Photoshop, Illustrator and Canva for logos, social posts and brand kits.</p><div class="meta"><span>3 months</span><span>Morning</span><span class="fee">PKR 28,000</span></div></div></div>
+      <div class="course" data-c="tech"><div class="top" style="background:#D6F1FF"><span>📊</span><span class="lvl">Intermediate</span></div><div class="body"><h3>Data Analytics with Excel &amp; Power BI</h3><p>Clean, analyze and visualize data with real business datasets.</p><div class="meta"><span>2 months</span><span>Evening</span><span class="fee">PKR 25,000</span></div></div></div>
+      <div class="course" data-c="business"><div class="top" style="background:#FFF2C2"><span>🌍</span><span class="lvl">All levels</span></div><div class="body"><h3>Freelancing Bootcamp</h3><p>Fiverr and Upwork profiles, proposals, pricing and client communication.</p><div class="meta"><span>6 weeks</span><span>Weekend</span><span class="fee">PKR 15,000</span></div></div></div>
+      <div class="course" data-c="creative"><div class="top" style="background:#FFDDEB"><span>🎬</span><span class="lvl">Beginner</span></div><div class="body"><h3>Video Editing &amp; Content</h3><p>Premiere Pro, CapCut and AI tools for reels, YouTube and ads.</p><div class="meta"><span>2 months</span><span>Evening</span><span class="fee">PKR 22,000</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="wrap">
+    <div class="head"><div><span class="tagline">Why SkillForge</span><h2>Built for results, not just certificates</h2></div></div>
+    <div class="grid4">
+      <div class="w"><b>80%</b><h3>Practical</h3><p>Most class time is hands-on, building real projects.</p></div>
+      <div class="w"><b>1:15</b><h3>Small batches</h3><p>Personal attention from instructors in every class.</p></div>
+      <div class="w"><b>∞</b><h3>Lifetime access</h3><p>Recordings and resources stay available after you finish.</p></div>
+      <div class="w"><b>✓</b><h3>Career support</h3><p>CV reviews, portfolio feedback and interview practice.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="register">
+  <div class="wrap reg">
+    <div>
+      <span class="tagline">Admissions</span>
+      <h2 style="font-size:clamp(2.2rem,4.5vw,3.2rem)">Reserve your seat</h2>
+      <p>Register your interest and our admissions team will call you with batch timings, fee plans and a free career counselling session.</p>
+      <ul class="perks"><li>Installment plans available</li><li>Free demo class before you pay</li><li>Certificate on completion</li></ul>
+    </div>
+    <div class="reg-card">
+      <form>
+        <label>Full name<input required></label>
+        <label>Phone / WhatsApp<input type="tel" required></label>
+        <label class="full">Course<select><option>Full-Stack Web Development</option><option>Digital Marketing Pro</option><option>Graphic Design &amp; Branding</option><option>Data Analytics</option><option>Freelancing Bootcamp</option><option>Video Editing &amp; Content</option></select></label>
+        <label>Preferred timing<select><option>Morning</option><option>Evening</option><option>Weekend</option><option>Online</option></select></label>
+        <label>Current status<select><option>Student</option><option>Working professional</option><option>Freelancer</option><option>Other</option></select></label>
+        <div class="full"><button class="btn btn-o" type="submit">Register Interest</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><strong style="color:#fff">SkillForge Academy (fictional)</strong><span>Website concept by <a href="../../index.html" style="color:var(--lime);font-weight:600">Parha Likha Pakistan</a></span></div>
+</footer>
+<script>
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.course').forEach(c=>c.hidden=!(b.dataset.f==='all'||c.dataset.c===b.dataset.f));
+}));
+</script>
+<script src="../concept.js"></script>
+</body>
+</html>

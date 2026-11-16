@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northstar Global | Concept Study Abroad &amp; Visa Consultancy Website by PLP</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Concept website for a fictional study-abroad and student visa consultancy, designed by Parha Likha Pakistan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1F3A;--navy2:#132D52;--gold:#D4A84B;--gold-l:#F7EEDB;--ink:#0B1F3A;--text:#4B5B72;--line:#E3E8F0;--bg:#F6F8FB}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--text);font:400 16px/1.7 "DM Sans",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{color:var(--ink);line-height:1.15;margin:0 0 .5em}
+h1,h2{font-family:"DM Serif Display",Georgia,serif;font-weight:400}
+h3{font-weight:700;font-size:1.12rem}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:8px;font:700 .95rem "DM Sans";border:0;cursor:pointer;transition:.2s}
+.btn-gold{background:var(--gold);color:var(--navy)}.btn-gold:hover{background:#e3bb63}
+.btn-out{border:1.5px solid rgba(255,255,255,.4);color:#fff}.btn-out:hover{background:#fff;color:var(--navy)}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy2)}
+header{position:absolute;left:0;right:0;z-index:50;color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.2rem;letter-spacing:.02em}
+.logo svg{flex-shrink:0}
+.logo small{display:block;font-weight:500;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:rgba(255,255,255,.1);color:#fff;border:0;border-radius:8px;padding:10px 14px;font:700 .9rem "DM Sans"}
+/* hero */
+.hero{position:relative;background:radial-gradient(800px 500px at 85% 30%,rgba(212,168,75,.18),transparent 60%),linear-gradient(135deg,var(--navy),#0E2950);color:#C8D3E4;padding:160px 0 120px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(2.6rem,5.4vw,4.4rem)}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p{font-size:1.12rem;max-width:540px;margin-bottom:30px}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:40px;font-size:.88rem}
+.trust b{color:#fff;font-size:1.5rem;display:block;font-family:"DM Serif Display",serif;font-weight:400}
+.globe{position:relative;width:100%;max-width:440px;aspect-ratio:1;margin-left:auto}
+.globe svg{width:100%;height:100%}
+.chip{position:absolute;background:#fff;color:var(--navy);border-radius:12px;padding:10px 14px;font-weight:700;font-size:.85rem;box-shadow:0 14px 30px rgba(0,0,0,.25);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.chip small{display:block;font-weight:500;color:var(--text);font-size:.72rem}
+.c1{top:8%;left:-6%}.c2{top:46%;right:-8%}.c3{bottom:6%;left:8%}
+/* finder */
+.finder{position:relative;z-index:3;margin-top:-46px}
+.finder form{background:#fff;border-radius:16px;box-shadow:0 20px 50px rgba(11,31,58,.15);padding:22px;display:grid;grid-template-columns:repeat(3,1fr) auto;gap:14px;align-items:end}
+label{display:grid;gap:6px;font-weight:700;font-size:.8rem;color:var(--ink);letter-spacing:.04em;text-transform:uppercase}
+input,select,textarea{font:400 1rem "DM Sans";color:var(--ink);border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;background:#fff;width:100%;text-transform:none;letter-spacing:0}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+section{padding:96px 0}
+.head{max-width:680px;margin:0 auto 52px;text-align:center}
+.head h2{font-size:clamp(2.1rem,4vw,3rem)}
+.over{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+/* destinations */
+.dest{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.d{border:1px solid var(--line);border-radius:16px;padding:26px;transition:.25s;background:#fff;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:center}
+.d:hover{border-color:var(--gold);box-shadow:0 14px 34px rgba(11,31,58,.08);transform:translateY(-3px)}
+.d .flag{grid-row:span 2;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--gold);font-weight:700;letter-spacing:.05em}
+.cc{font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--gold);font-size:.7rem}
+.d h3{margin:0}.d span{font-size:.88rem}
+.d ul{grid-column:1/-1;margin:14px 0 0;padding:14px 0 0;border-top:1px dashed var(--line);list-style:none;font-size:.9rem;display:grid;gap:4px}
+.d li::before{content:"✓ ";color:var(--gold);font-weight:700}
+/* services */
+.bg{background:var(--bg)}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.s{background:#fff;border-radius:16px;padding:30px;border-top:3px solid var(--gold)}
+.s .n{font-family:"DM Serif Display",serif;font-size:2.2rem;color:var(--gold-l);-webkit-text-stroke:1px var(--gold);line-height:1;margin-bottom:12px}
+.s p{margin:0;font-size:.94rem}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.proc::before{content:"";position:absolute;top:28px;left:10%;right:10%;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 14px)}
+.p{text-align:center;padding:0 10px;position:relative}
+.p i{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 16px;border-radius:50%;background:var(--navy);color:var(--gold);font-style:normal;font-size:1.4rem;box-shadow:0 0 0 8px #fff}
+.p p{font-size:.9rem;margin:0}
+/* band */
+.band{background:var(--navy);color:#C8D3E4;border-radius:22px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.band h2{color:#fff;font-size:clamp(1.9rem,3.5vw,2.6rem)}
+.band form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.band label{color:#fff}
+.band input,.band select,.band textarea{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:#fff}
+.band option{color:var(--ink)}
+.full{grid-column:1/-1}
+.note{font-size:.82rem;color:#8EA0BC;margin-top:14px}
+footer{padding:44px 0;font-size:.9rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:980px){
+  .menu-btn{display:block}
+  header{position:absolute}
+  nav ul{display:none;position:absolute;top:84px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:8px 20px 18px}
+  nav.open ul{display:flex}nav ul a{display:block;padding:12px 0}
+  .nav>.btn{display:none}
+  .hero{padding:130px 0 100px}.hero .wrap,.band{grid-template-columns:1fr}.globe{margin:20px auto 0;max-width:340px}
+  .finder form{grid-template-columns:1fr 1fr}.dest,.svc{grid-template-columns:1fr 1fr}
+  .proc{grid-template-columns:1fr;gap:24px}.proc::before{display:none}
+  .p{display:grid;grid-template-columns:58px 1fr;gap:4px 16px;text-align:left}.p i{grid-row:span 2;margin:0}.p h3{margin:6px 0 0}
+  .band{padding:34px 22px}section{padding:70px 0}
+}
+@media(max-width:600px){.finder form,.dest,.svc,.band form{grid-template-columns:1fr}.chip{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="none" stroke="#D4A84B" stroke-width="1.5"/><path d="M20 5l3.2 11.8L35 20l-11.8 3.2L20 35l-3.2-11.8L5 20l11.8-3.2Z" fill="#D4A84B"/></svg><span>Northstar Global<small>Study Abroad &amp; Visa Consultants</small></span></a>
+    <nav data-nav aria-label="Main"><ul><li><a href="#destinations">Destinations</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#assessment">Free Assessment</a></li></ul></nav>
+    <a class="btn btn-gold" href="#assessment">Book Free Counselling</a>
+    <button class="menu-btn" data-menu aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="over">Islamabad · Lahore · Karachi</span>
+      <h1>Your future, <em>abroad.</em><br>Guided every step.</h1>
+      <p>Expert counselling for university admissions, scholarships and student visas to the UK, Canada, Australia, USA and Europe, from choosing a course to boarding your flight.</p>
+      <div class="btns"><a class="btn btn-gold" href="#assessment">Get a Free Profile Assessment</a><a class="btn btn-out" href="#destinations">Explore Destinations</a></div>
+      <div class="trust"><div><b>12 yrs</b>Counselling experience</div><div><b>350+</b>Partner universities</div><div><b>6</b>Study destinations</div></div>
+    </div>
+    <div class="globe" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="#132D52" stroke="#D4A84B" stroke-opacity=".5"/><ellipse cx="100" cy="100" rx="35" ry="80" fill="none" stroke="#D4A84B" stroke-opacity=".35"/><ellipse cx="100" cy="100" rx="65" ry="80" fill="none" stroke="#D4A84B" stroke-opacity=".2"/><path d="M20 100h160M30 60h140M30 140h140" stroke="#D4A84B" stroke-opacity=".25"/><path d="M48 128c30-50 74-70 112-60" fill="none" stroke="#D4A84B" stroke-width="2" stroke-dasharray="4 4"/><path d="M152 62l10 4-7 8" fill="none" stroke="#D4A84B" stroke-width="2"/><circle cx="48" cy="128" r="5" fill="#D4A84B"/></svg>
+      <div class="chip c1"><i class="cc">UK</i> <span>Offer letter received<small>MSc Data Science</small></span></div>
+      <div class="chip c2"><i class="cc">CA</i> <span>Study permit approved<small>Business Diploma</small></span></div>
+      <div class="chip c3"><i class="cc">AU</i> <span>Scholarship 30%<small>Bachelor of IT</small></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap finder">
+  <form>
+    <label>I want to study<select><option>Master's</option><option>Bachelor's</option><option>Diploma</option><option>PhD</option></select></label>
+    <label>Destination<select><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>USA</option><option>Germany</option><option>Ireland</option></select></label>
+    <label>Intake<select><option>September 2027</option><option>January 2028</option><option>May 2028</option></select></label>
+    <button class="btn btn-navy" type="submit">Find Programs</button>
+  </form>
+</div>
+
+<section id="destinations">
+  <div class="wrap">
+    <div class="head"><span class="over">Study Destinations</span><h2>Where would you like to study?</h2><p>We help you compare countries, costs, work rights and career outcomes before you decide.</p></div>
+    <div class="dest">
+      <div class="d"><span class="flag">UK</span><h3>United Kingdom</h3><span>1-year Master's programs</span><ul><li>Graduate Route work visa</li><li>Top-ranked universities</li></ul></div>
+      <div class="d"><span class="flag">CA</span><h3>Canada</h3><span>Colleges &amp; universities</span><ul><li>Post-graduation work permit</li><li>Co-op programs</li></ul></div>
+      <div class="d"><span class="flag">AU</span><h3>Australia</h3><span>Bachelor's &amp; Master's</span><ul><li>Post-study work rights</li><li>Scholarships available</li></ul></div>
+      <div class="d"><span class="flag">US</span><h3>United States</h3><span>Research &amp; STEM focus</span><ul><li>STEM OPT opportunities</li><li>Assistantships</li></ul></div>
+      <div class="d"><span class="flag">DE</span><h3>Germany</h3><span>Low or no tuition</span><ul><li>English-taught programs</li><li>Strong engineering sector</li></ul></div>
+      <div class="d"><span class="flag">IE</span><h3>Ireland</h3><span>Tech hub of Europe</span><ul><li>Stay-back options</li><li>Global tech employers</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="bg">
+  <div class="wrap">
+    <div class="head"><span class="over">Our Services</span><h2>Complete support, one team</h2></div>
+    <div class="svc">
+      <div class="s"><div class="n">01</div><h3>Career &amp; Course Counselling</h3><p>One-to-one sessions to match your profile, budget and goals with the right course and country.</p></div>
+      <div class="s"><div class="n">02</div><h3>University Applications</h3><p>Shortlisting, SOP and CV guidance, document checks and application tracking.</p></div>
+      <div class="s"><div class="n">03</div><h3>Scholarship Guidance</h3><p>Identify scholarships and bursaries you're eligible for and prepare strong applications.</p></div>
+      <div class="s"><div class="n">04</div><h3>Student Visa Preparation</h3><p>Visa file preparation, financial documents guidance and interview practice.</p></div>
+      <div class="s"><div class="n">05</div><h3>IELTS / PTE Preparation</h3><p>Mock tests and coaching to reach your required English score.</p></div>
+      <div class="s"><div class="n">06</div><h3>Pre-Departure Briefing</h3><p>Accommodation, travel, banking and settling-in tips before you fly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="head"><span class="over">How It Works</span><h2>From dream to departure</h2></div>
+    <div class="proc">
+      <div class="p"><i>💬</i><h3>Free Counselling</h3><p>Discuss your goals and profile.</p></div>
+      <div class="p"><i>🎯</i><h3>Shortlist</h3><p>Choose courses and universities.</p></div>
+      <div class="p"><i>📄</i><h3>Apply</h3><p>Submit strong applications.</p></div>
+      <div class="p"><i>🛂</i><h3>Visa</h3><p>Prepare and lodge your visa file.</p></div>
+      <div class="p"><i>✈️</i><h3>Fly</h3><p>Pre-departure support.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="assessment" style="padding-top:0">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <span class="over">Free Profile Assessment</span>
+        <h2>Find out where you can study</h2>
+        <p>Share a few details and a senior counsellor will review your profile and call you with options, at no cost.</p>
+        <p class="note">Visa decisions are made solely by the relevant embassy or immigration authority. No consultant can guarantee a visa.</p>
+      </div>
+      <form>
+        <label>Full name<input required></label>
+        <label>Phone / WhatsApp<input type="tel" required></label>
+        <label>Last qualification<select><option>Intermediate / A Levels</option><option>Bachelor's</option><option>Master's</option></select></label>
+        <label>Percentage / CGPA<input placeholder="e.g. 3.2 CGPA"></label>
+        <label>English test<select><option>Not taken yet</option><option>IELTS</option><option>PTE</option><option>TOEFL</option></select></label>
+        <label>Preferred country<select><option>UK</option><option>Canada</option><option>Australia</option><option>USA</option><option>Germany</option><option>Ireland</option></select></label>
+        <div class="full"><button class="btn btn-gold" type="submit">Request Free Assessment</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><strong style="color:var(--ink)">Northstar Global (fictional)</strong><span>Website concept by <a href="../../index.html" style="color:#B48A2E;font-weight:700">Parha Likha Pakistan</a></span></div>
+</footer>
+<script src="../concept.js"></script>
+</body>
+</html>

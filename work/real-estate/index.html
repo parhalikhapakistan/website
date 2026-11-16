@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyline Properties | Concept Real Estate Website by PLP</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F2340;--red:#D7263D;--sky:#E9F1FA;--ink:#0F2340;--text:#5A6B82;--line:#E2E8F0;--bg:#F8FAFC}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:500 16px/1.65 Raleway,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{color:var(--ink);line-height:1.12;margin:0 0 .45em;font-weight:800}
+h3{font-weight:700;font-size:1.1rem}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:6px;font:700 .95rem Raleway;border:0;cursor:pointer;transition:.2s}
+.btn.r{background:var(--red);color:#fff}.btn.r:hover{background:#B91C33}
+.btn.n{background:var(--navy);color:#fff}.btn.w{background:#fff;color:var(--navy)}
+header{position:absolute;left:0;right:0;z-index:50;color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:600}
+nav a:hover{color:#FCA5A5}
+.menu-btn{display:none;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:6px;padding:9px 14px;font:700 .9rem Raleway}
+.hero{position:relative;padding:150px 0 140px;color:#C9D5E6;background:linear-gradient(180deg,rgba(15,35,64,.4),rgba(15,35,64,.95)),linear-gradient(120deg,#1F3B63,#0F2340);overflow:hidden}
+.city{position:absolute;left:0;right:0;bottom:0;width:100%;height:55%;opacity:.35}
+.hero .in{position:relative;text-align:center}
+.hero h1{color:#fff;font-size:clamp(2.6rem,6vw,4.6rem);max-width:860px;margin:0 auto 16px}
+.hero p{max-width:600px;margin:0 auto;font-size:1.1rem}
+.search{position:relative;z-index:3;margin:-60px auto 0;max-width:1000px;background:#fff;border-radius:12px;box-shadow:0 24px 60px rgba(15,35,64,.18);padding:10px}
+.tabs{display:flex;flex-wrap:wrap;gap:4px;padding:6px 6px 12px}
+.tabs button{border:0;background:none;font:700 .92rem Raleway;color:var(--text);padding:8px 16px;border-radius:6px;cursor:pointer}
+.tabs button.on{background:var(--sky);color:var(--navy)}
+.search form{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:10px;padding:0 6px 6px}
+label{display:grid;gap:4px;font-size:.75rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em}
+input,select{font:500 .98rem Raleway;color:var(--ink);border:1.5px solid var(--line);border-radius:6px;padding:11px 12px;background:#fff;width:100%;text-transform:none;letter-spacing:0}
+input:focus,select:focus{outline:none;border-color:var(--red)}
+.search .btn{align-self:end;height:46px}
+section{padding:90px 0}
+.h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.h h2{font-size:clamp(2rem,4vw,2.8rem);margin:0}
+.k{display:block;color:var(--red);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.listings{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.l{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);transition:.25s}
+.l:hover{box-shadow:0 18px 40px rgba(15,35,64,.12);transform:translateY(-3px)}
+.l .img{height:200px;position:relative;display:flex;align-items:flex-end;padding:14px}
+.l .img svg{position:absolute;inset:0;width:100%;height:100%}
+.l .badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:4px}
+.l .price{position:relative;background:rgba(15,35,64,.85);color:#fff;font-weight:800;padding:6px 12px;border-radius:6px}
+.l .body{padding:18px 20px 20px}
+.l .loc{font-size:.88rem;margin-bottom:12px}
+.feat{display:flex;gap:16px;font-size:.85rem;font-weight:600;color:var(--ink);border-top:1px solid var(--line);padding-top:12px}
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.a{border-radius:12px;padding:24px;color:#fff;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end}
+.a b{font-size:1.2rem}.a span{font-size:.85rem;opacity:.85}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.wl{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.w{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
+.w b{display:block;font-size:2rem;color:var(--red);font-weight:800;line-height:1;margin-bottom:6px}
+.val{background:var(--navy);color:#C9D5E6;border-radius:16px;padding:40px}
+.val h2{color:#fff}
+.val form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.val label{color:#fff}
+.full{grid-column:1/-1}
+footer{padding:34px 0;font-size:.88rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:960px){
+  .menu-btn{display:block}nav{position:absolute;top:80px;left:0;right:0}
+  nav ul{display:none;flex-direction:column;gap:0;background:var(--navy);padding:6px 20px 18px}
+  nav.open ul{display:flex}nav ul a{display:block;padding:12px 0}
+  .nav>.btn{display:none}
+  .search form{grid-template-columns:1fr 1fr}.search .btn{grid-column:1/-1}
+  .listings{grid-template-columns:1fr 1fr}.areas{grid-template-columns:1fr 1fr}.why{grid-template-columns:1fr}section{padding:70px 0}
+}
+@media(max-width:600px){.listings,.wl,.val form{grid-template-columns:1fr}.search{margin:-40px 16px 0}.search form{grid-template-columns:1fr}.hero{padding:130px 0 100px}.val{padding:26px 20px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="3" y="14" width="8" height="18" fill="#fff"/><rect x="13" y="4" width="8" height="28" fill="#D7263D"/><rect x="23" y="10" width="8" height="22" fill="#fff"/></svg>Skyline Properties</a>
+    <nav data-nav aria-label="Main"><ul><li><a href="#listings">Buy</a></li><li><a href="#listings">Rent</a></li><li><a href="#areas">Areas</a></li><li><a href="#sell">Sell</a></li></ul></nav>
+    <a class="btn r" href="#sell">List Your Property</a>
+    <button class="menu-btn" data-menu aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="city" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true"><path fill="#fff" d="M0 400V260h60v-60h50v80h40V140h70v120h30v-90h60v150h40V100h80v200h30V180h60v100h50V60h90v240h40V200h70v80h40V120h60v160h50v-90h60v140h40V150h80v150h50v-80h60v100h40V230h60v170Z"/></svg>
+  <div class="wrap in">
+    <h1>Find a place you'll love to call home</h1>
+    <p>Verified homes, plots and commercial properties in DHA, Bahria Town and Gulberg, with honest advice from Lahore's trusted agents.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="search">
+    <div class="tabs" role="tablist"><button class="on">Buy</button><button>Rent</button><button>Plots</button><button>Commercial</button></div>
+    <form>
+      <label>Location<select><option>DHA Lahore</option><option>Bahria Town</option><option>Gulberg</option><option>Johar Town</option></select></label>
+      <label>Type<select><option>House</option><option>Apartment</option><option>Plot</option></select></label>
+      <label>Size<select><option>5 Marla</option><option>10 Marla</option><option>1 Kanal</option></select></label>
+      <label>Budget<select><option>Any</option><option>Under 3 Crore</option><option>3–6 Crore</option><option>6+ Crore</option></select></label>
+      <button class="btn r" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+
+<section id="listings">
+  <div class="wrap">
+    <div class="h"><div><span class="k">Featured</span><h2>Latest listings</h2></div><a class="btn n" href="#" data-demo="Demo only: a real site would show the full searchable listings page.">View all properties</a></div>
+    <div class="listings">
+      <div class="l"><div class="img" style="background:linear-gradient(160deg,#BFD7EA,#7FA7C9)"><svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMax meet"><path d="M60 200V100l90-60 90 60v100Z" fill="#fff" opacity=".85"/><rect x="130" y="140" width="40" height="60" fill="#0F2340"/><rect x="85" y="115" width="30" height="25" fill="#7FA7C9"/><rect x="185" y="115" width="30" height="25" fill="#7FA7C9"/></svg><span class="badge">For Sale</span><span class="price">PKR 6.5 Crore</span></div><div class="body"><h3>Modern 1 Kanal House</h3><div class="loc">📍 DHA Phase 6, Lahore</div><div class="feat"><span>🛏 5 Beds</span><span>🛁 6 Baths</span><span>📐 1 Kanal</span></div></div></div>
+      <div class="l"><div class="img" style="background:linear-gradient(160deg,#F1D9C4,#C99A7A)"><svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMax meet"><rect x="100" y="40" width="100" height="160" fill="#fff" opacity=".85"/><g fill="#C99A7A"><rect x="115" y="55" width="25" height="20"/><rect x="160" y="55" width="25" height="20"/><rect x="115" y="90" width="25" height="20"/><rect x="160" y="90" width="25" height="20"/><rect x="115" y="125" width="25" height="20"/><rect x="160" y="125" width="25" height="20"/></g></svg><span class="badge" style="background:#0F2340">For Rent</span><span class="price">PKR 180,000 / month</span></div><div class="body"><h3>3-Bed Luxury Apartment</h3><div class="loc">📍 Gulberg III, Lahore</div><div class="feat"><span>🛏 3 Beds</span><span>🛁 3 Baths</span><span>📐 2,100 sq ft</span></div></div></div>
+      <div class="l"><div class="img" style="background:linear-gradient(160deg,#D4E8C9,#8DB87A)"><svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMax meet"><rect x="40" y="130" width="220" height="70" fill="#fff" opacity=".6"/><path d="M40 130h220" stroke="#fff" stroke-width="3" stroke-dasharray="10 8"/><rect x="140" y="80" width="6" height="50" fill="#0F2340"/><path d="M146 80h30l-8 10 8 10h-30Z" fill="#D7263D"/></svg><span class="badge">Plot</span><span class="price">PKR 1.9 Crore</span></div><div class="body"><h3>10 Marla Residential Plot</h3><div class="loc">📍 Bahria Town, Lahore</div><div class="feat"><span>📐 10 Marla</span><span>🧭 Corner</span><span>⚡ Possession</span></div></div></div>
+    </div>
+    <p style="font-size:.85rem;margin-top:14px">Sample listings and prices for concept design.</p>
+  </div>
+</section>
+
+<section id="areas" style="padding-top:0">
+  <div class="wrap">
+    <div class="h"><div><span class="k">Explore</span><h2>Popular areas</h2></div></div>
+    <div class="areas">
+      <div class="a" style="background:linear-gradient(160deg,#1F3B63,#0F2340)"><b>DHA</b><span>320+ listings</span></div>
+      <div class="a" style="background:linear-gradient(160deg,#D7263D,#8F1527)"><b>Bahria Town</b><span>210+ listings</span></div>
+      <div class="a" style="background:linear-gradient(160deg,#3D7A8C,#1D4E5C)"><b>Gulberg</b><span>140+ listings</span></div>
+      <div class="a" style="background:linear-gradient(160deg,#6B5B95,#3F3461)"><b>Johar Town</b><span>180+ listings</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sell" style="padding-top:0">
+  <div class="wrap why">
+    <div><span class="k">Why Skyline</span><h2 style="font-size:clamp(2rem,4vw,2.8rem)">Honest advice. Verified properties.</h2><p>Every listing is physically verified by our team. We help with documentation, transfers and fair price negotiation.</p>
+      <div class="wl"><div class="w"><b>15+</b>Years in Lahore real estate</div><div class="w"><b>100%</b>Verified listings</div></div></div>
+    <div class="val">
+      <h2 style="font-size:1.8rem">Get a free property valuation</h2><p>Thinking of selling or renting out? Our agent will call you with a market estimate.</p>
+      <form><label>Name<input required></label><label>Phone<input type="tel" required></label><label class="full">Property location<input placeholder="e.g. DHA Phase 5, 1 Kanal"></label><div class="full"><button class="btn r" type="submit">Request Valuation</button></div></form>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Skyline Properties (fictional agency)</span><span>Website concept by <a href="../../index.html" style="color:var(--red);font-weight:700">Parha Likha Pakistan</a></span></div></footer>
+<script>document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b))));</script>
+<script src="../concept.js"></script>
+</body>
+</html>

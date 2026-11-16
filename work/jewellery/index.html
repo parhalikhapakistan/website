@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zarina Jewels | Concept Jewellery Website by PLP</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--em:#0B3B2E;--em2:#0F4D3C;--gold:#C9A24D;--gold-l:#E8D29A;--ivory:#FBF8F1;--text:#5D6B64;--line:rgba(201,162,77,.3)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--text);font:300 16px/1.8 Lato,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:Cinzel,Georgia,serif;color:var(--em);font-weight:600;line-height:1.15;margin:0 0 .5em;letter-spacing:.04em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:15px 30px;font:700 .75rem Lato;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:.25s;border:1px solid var(--gold)}
+.btn.gold{background:linear-gradient(135deg,var(--gold),#A9832F);color:#fff;border-color:transparent}.btn.gold:hover{filter:brightness(1.1)}
+.btn.line{color:var(--gold-l)}.btn.line:hover{background:var(--gold);color:#fff}
+.rate{background:#061F18;color:var(--gold-l);font-size:.8rem;letter-spacing:.06em;overflow:hidden;white-space:nowrap;padding:9px 0}
+.rate span{display:inline-block;animation:r 30s linear infinite}@keyframes r{to{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:50;background:var(--em);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px;color:#E9E2CF}
+.logo{text-align:center;font-family:Cinzel,serif;color:var(--gold-l);font-size:1.6rem;letter-spacing:.2em;line-height:1}
+.logo small{display:block;font:400 .6rem Lato;letter-spacing:.5em;color:#B9C7BF;margin-top:6px}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase}
+nav a:hover{color:var(--gold-l)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--gold-l);padding:8px 12px;font:700 .72rem Lato;letter-spacing:.14em;text-transform:uppercase}
+.hero{background:radial-gradient(60% 80% at 70% 50%,var(--em2),var(--em) 70%);color:#C9D4CE;padding:100px 0;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.orn{color:var(--gold);letter-spacing:.5em;font-size:.75rem;text-transform:uppercase;display:block;margin-bottom:22px}
+.hero h1{color:#fff;font-size:clamp(2.6rem,5.5vw,4.6rem)}
+.hero h1 span{color:var(--gold-l)}
+.hero p{max-width:460px;margin-bottom:34px;font-size:1.05rem}
+.ring{position:relative;width:100%;max-width:440px;aspect-ratio:1;margin-left:auto}
+.ring::before{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--line);box-shadow:0 0 0 30px rgba(201,162,77,.05),0 0 0 60px rgba(201,162,77,.03)}
+.ring svg{position:absolute;inset:12%}
+section{padding:100px 0}
+.title{text-align:center;max-width:640px;margin:0 auto 54px}
+.title h2{font-size:clamp(2rem,4vw,2.9rem)}
+.title .orn{margin-bottom:12px}
+.divider{display:block;width:90px;height:1px;background:var(--gold);margin:18px auto 0;position:relative}
+.divider::after{content:"◆";position:absolute;left:50%;top:50%;transform:translate(-50%,-55%);color:var(--gold);font-size:.7rem;background:var(--ivory);padding:0 8px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.col{text-align:center;border:1px solid var(--line);padding:40px 26px;background:#fff;transition:.3s}
+.col:hover{border-color:var(--gold);box-shadow:0 20px 40px rgba(11,59,46,.08)}
+.col .ic{width:110px;height:110px;margin:0 auto 22px;border-radius:50%;background:radial-gradient(circle,#FFF8E6,#F3E6C5);display:grid;place-items:center}
+.col p{font-size:.95rem;margin:0 0 18px}
+.col a{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.items{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.it{background:#fff;border:1px solid var(--line);text-align:center;padding:20px 16px 24px}
+.it .im{aspect-ratio:1;background:radial-gradient(circle at 50% 45%,#FFFDF6,#EFE5CC);display:grid;place-items:center;margin-bottom:16px}
+.it h3{font-size:.95rem;letter-spacing:.06em;margin-bottom:4px}
+.it small{display:block;font-size:.8rem;margin-bottom:10px}
+.it b{color:var(--em);font-weight:700}
+.it button{margin-top:14px;padding:10px 18px;font-size:.66rem}
+.dark{background:var(--em);color:#C9D4CE}
+.dark h2{color:#fff}
+.promise{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.promise div{padding:24px;border:1px solid var(--line)}
+.promise b{display:block;font-family:Cinzel,serif;color:var(--gold-l);font-size:1.05rem;font-weight:500;margin-bottom:6px;letter-spacing:.06em}
+.appt{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#fff;border:1px solid var(--line);padding:34px}
+label{display:grid;gap:6px;font:700 .7rem Lato;letter-spacing:.18em;text-transform:uppercase;color:var(--em)}
+input,select{font:300 1rem Lato;border:0;border-bottom:1px solid var(--line);padding:10px 2px;background:none;width:100%;color:var(--em);letter-spacing:0;text-transform:none}
+input:focus,select:focus{outline:none;border-color:var(--gold)}
+.full{grid-column:1/-1}
+footer{background:#061F18;color:#8FA59A;padding:40px 0;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:960px){
+  .menu-btn{display:block}nav{position:absolute;top:84px;left:0;right:0}
+  nav ul{display:none;flex-direction:column;gap:0;background:var(--em);padding:6px 24px 18px;border-bottom:1px solid var(--line)}
+  nav.open ul{display:flex}nav ul a{display:block;padding:12px 0}
+  .nav>.btn{display:none}
+  .hero .wrap,.appt{grid-template-columns:1fr}.ring{margin:0 auto;max-width:320px}
+  .cols{grid-template-columns:1fr}.items,.promise{grid-template-columns:1fr 1fr}section{padding:70px 0}
+}
+@media(max-width:520px){form{grid-template-columns:1fr;padding:22px}.items{gap:12px}.it{padding:12px 10px 18px}}
+</style>
+</head>
+<body>
+<div class="rate" aria-label="Sample gold rates"><span>✦ Today's gold rate (sample): 24K PKR 0,00,000 / tola ✦ 22K PKR 0,00,000 / tola ✦ 21K PKR 0,00,000 / tola ✦ Rates update daily in store ✦ Today's gold rate (sample): 24K PKR 0,00,000 / tola ✦ 22K PKR 0,00,000 / tola ✦ 21K PKR 0,00,000 / tola ✦ Rates update daily in store&nbsp;</span></div>
+<header>
+  <div class="wrap nav">
+    <nav data-nav aria-label="Main"><ul><li><a href="#collections">Collections</a></li><li><a href="#bridal">Bridal</a></li><li><a href="#visit">Visit</a></li></ul></nav>
+    <a class="logo" href="#">ZARINA<small>JEWELS · SINCE 1979</small></a>
+    <a class="btn gold" href="#visit" style="padding:12px 20px">Book a Visit</a>
+    <button class="menu-btn" data-menu aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="orn">◆ Fine Gold &amp; Diamond Jewellery ◆</span>
+      <h1>Heirlooms for <span>every chapter</span> of your story</h1>
+      <p>Handcrafted 22K gold, kundan and diamond jewellery from our Lahore atelier, with certified purity and lifetime exchange.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn gold" href="#collections">Explore Collections</a><a class="btn line" href="#visit">Private Appointment</a></div>
+    </div>
+    <div class="ring" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3DFA2"/><stop offset=".5" stop-color="#C9A24D"/><stop offset="1" stop-color="#8E6B23"/></linearGradient></defs><path d="M30 60c20 70 120 70 140 0" fill="none" stroke="url(#g)" stroke-width="5"/><g fill="url(#g)"><circle cx="45" cy="92" r="6"/><circle cx="62" cy="110" r="7"/><circle cx="82" cy="121" r="8"/><circle cx="118" cy="121" r="8"/><circle cx="138" cy="110" r="7"/><circle cx="155" cy="92" r="6"/></g><path d="M100 118l14 18-14 30-14-30Z" fill="url(#g)"/><path d="M100 128l7 9-7 15-7-15Z" fill="#0B3B2E"/><circle cx="100" cy="174" r="9" fill="#9FD3C0" stroke="url(#g)" stroke-width="3"/></svg>
+    </div>
+  </div>
+</section>
+
+<section id="collections">
+  <div class="wrap">
+    <div class="title"><span class="orn">Collections</span><h2>Crafted for every occasion</h2><span class="divider"></span></div>
+    <div class="cols">
+      <div class="col"><div class="ic"><svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="34" r="16" fill="none" stroke="#C9A24D" stroke-width="4"/><path d="M22 14l8-8 8 8-8 6Z" fill="#9FD3C0" stroke="#C9A24D" stroke-width="2"/></svg></div><h3>Bridal</h3><p>Kundan, polki and gold sets for your baraat, walima and mehndi.</p><a href="#bridal">View collection</a></div>
+      <div class="col"><div class="ic"><svg width="60" height="60" viewBox="0 0 60 60"><path d="M10 20c6 24 34 24 40 0" fill="none" stroke="#C9A24D" stroke-width="3"/><circle cx="30" cy="40" r="6" fill="#C9A24D"/></svg></div><h3>Everyday Gold</h3><p>Lightweight chains, studs and bangles for daily elegance.</p><a href="#bridal">View collection</a></div>
+      <div class="col"><div class="ic"><svg width="60" height="60" viewBox="0 0 60 60"><path d="M30 8l14 16-14 28-14-28Z" fill="none" stroke="#C9A24D" stroke-width="3"/><path d="M16 24h28" stroke="#C9A24D" stroke-width="2"/></svg></div><h3>Diamonds</h3><p>Certified diamond rings, pendants and tennis bracelets.</p><a href="#bridal">View collection</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="bridal" style="padding-top:0">
+  <div class="wrap">
+    <div class="title"><span class="orn">Featured</span><h2>Bridal favourites</h2><span class="divider"></span></div>
+    <div class="items">
+      <div class="it"><div class="im"><svg width="80" height="80" viewBox="0 0 80 80"><path d="M10 20c10 40 50 40 60 0" fill="none" stroke="#C9A24D" stroke-width="4"/><g fill="#C9A24D"><circle cx="24" cy="44" r="5"/><circle cx="40" cy="50" r="6"/><circle cx="56" cy="44" r="5"/></g></svg></div><h3>Noor-e-Jahan Set</h3><small>22K Gold · Kundan</small><b>Price on request</b><br><button class="btn gold" data-add="Noor-e-Jahan Set">Enquire</button></div>
+      <div class="it"><div class="im"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="44" r="20" fill="none" stroke="#C9A24D" stroke-width="5"/><path d="M32 20l8-10 8 10-8 6Z" fill="#fff" stroke="#C9A24D" stroke-width="2"/></svg></div><h3>Solitaire Ring</h3><small>18K · 0.5 ct diamond</small><b>Price on request</b><br><button class="btn gold" data-add="Solitaire Ring">Enquire</button></div>
+      <div class="it"><div class="im"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="26" cy="30" r="6" fill="#C9A24D"/><path d="M26 36v10l-8 16h16l-8-16" fill="#C9A24D"/><circle cx="54" cy="30" r="6" fill="#C9A24D"/><path d="M54 36v10l-8 16h16l-8-16" fill="#C9A24D"/></svg></div><h3>Jhumka Earrings</h3><small>22K Gold · Pearls</small><b>Price on request</b><br><button class="btn gold" data-add="Jhumka Earrings">Enquire</button></div>
+      <div class="it"><div class="im"><svg width="80" height="80" viewBox="0 0 80 80"><ellipse cx="40" cy="40" rx="26" ry="18" fill="none" stroke="#C9A24D" stroke-width="6"/><ellipse cx="40" cy="40" rx="26" ry="18" fill="none" stroke="#F3DFA2" stroke-width="2" stroke-dasharray="3 5"/></svg></div><h3>Karra Bangles (pair)</h3><small>22K Gold</small><b>Price on request</b><br><button class="btn gold" data-add="Karra Bangles">Enquire</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="title"><span class="orn">The Zarina Promise</span><h2>Trust, crafted since 1979</h2></div>
+    <div class="promise"><div><b>Certified Purity</b>Hallmarked gold</div><div><b>Lifetime Exchange</b>On all gold jewellery</div><div><b>Custom Design</b>Made to your wish</div><div><b>Insured Delivery</b>Across Pakistan</div></div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap appt">
+    <div><span class="orn">Private Appointment</span><h2 style="font-size:clamp(2rem,4vw,2.8rem)">Visit our Lahore atelier</h2><p>Enjoy a private viewing with our design consultant. Ideal for bridal shopping and custom designs.</p><p>📍 M.M. Alam Road, Gulberg, Lahore<br>🕘 Mon–Sat, 12 pm – 9 pm</p></div>
+    <form>
+      <label>Name<input required></label><label>Phone<input type="tel" required></label>
+      <label>Date<input type="date" required></label><label>Interest<select><option>Bridal sets</option><option>Diamonds</option><option>Everyday gold</option><option>Custom design</option></select></label>
+      <div class="full"><button class="btn gold" type="submit">Request Appointment</button></div>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Zarina Jewels (fictional brand) · Gold rates shown are placeholders</span><span>Website concept by <a href="../../index.html" style="color:var(--gold-l);font-weight:700">Parha Likha Pakistan</a></span></div></footer>
+<script src="../concept.js"></script>
+</body>
+</html>
