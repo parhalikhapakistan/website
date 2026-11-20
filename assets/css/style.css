@@ -685,3 +685,8 @@ td:first-child { font-weight: 700; color: var(--forest); white-space: nowrap; }
   .pp-schedule td:nth-child(2) { text-align: right; color: var(--muted); font-size: .85rem; }
   .pp-schedule td:nth-child(3) { grid-column: 1 / -1; margin-top: 6px; }
 }
+.pp-perk { display: inline-flex; align-items: center; gap: 8px; margin: 14px 0 0; padding: 7px 14px; border-radius: 999px; background: var(--lime-soft); border: 1px solid var(--lime); color: var(--forest); font-weight: 600; font-size: .85rem; }
+.pp-perk .ic { color: var(--growth); }
+.program-card .pp-perk { margin: 12px 0 0; align-self: flex-start; }
+.pp-schedule .pp-break td { background: var(--mint); color: var(--muted); font-style: italic; }
+.pp-schedule .pp-break td:first-child { color: var(--muted); }
