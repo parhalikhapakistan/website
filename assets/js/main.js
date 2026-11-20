@@ -311,8 +311,9 @@
       const ref = d.reference || refField.value;
       const msg = 'Assalam-o-Alaikum! I have enrolled in ' + form.dataset.program + '. Reference: ' + ref + '. Name: ' + d.name +
         '. Participants: ' + d.participants + '. Amount paid: ' + pkr(total) + '. Here is my payment screenshot.';
+      const qr = (src, label) => (src ? '<img class="pay-box-qr" src="' + esc(src) + '" alt="' + esc(label) + '" width="160" height="160">' : '');
       const bank = pay.bank
-        ? '<div class="pay-box"><h4>Bank transfer</h4><p>' + esc(pay.bank).replace(/\n/g, '<br>') + '</p></div>'
+        ? '<div class="pay-box"><h4>Bank transfer</h4><p>' + esc(pay.bank).replace(/\n/g, '<br>') + '</p>' + qr(pay.bank_qr, 'Meezan Bank QR code') + '</div>'
         : '<div class="pay-box"><h4>Bank transfer</h4><p>Message us on WhatsApp and we will send you the bank account details.</p></div>';
       const done = box.querySelector('.enrol-done');
       if (uploaded) {
@@ -339,7 +340,7 @@
         '<p>We have received your enrolment for <strong>' + esc(form.dataset.program) + '</strong>. Please pay <strong>' + pkr(total) +
         '</strong> to confirm your seat.</p>' +
         '<div class="pay-grid"><div class="pay-box"><h4>Easypaisa</h4><p>Account title: <strong>' + esc(pay.easypaisa_title) +
-        '</strong><br>Number: <strong>' + esc(pay.easypaisa_number) + '</strong></p></div>' + bank + '</div>' +
+        '</strong><br>Number: <strong>' + esc(pay.easypaisa_number) + '</strong></p>' + qr(pay.easypaisa_qr, 'Easypaisa QR code') + '</div>' + bank + '</div>' +
         '<p>After paying, send the payment screenshot on WhatsApp. We will confirm your seat and send the class link.</p>' +
         '<div class="btn-row"><a class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" href="https://wa.me/' + pay.whatsapp +
         '?text=' + encodeURIComponent(msg) + '"><svg class="ic"><use href="#i-whatsapp"/></svg> Send payment screenshot</a></div>' +

@@ -841,3 +841,7 @@ details[open] > summary .pp-plus::after { transform: translate(-50%, -50%) rotat
 .receipt-field[hidden] { display: none; }
 .receipt-field input[type=file] { padding: 10px; font-size: .85rem; background: var(--mint); }
 .receipt-field small { font-size: .8rem; line-height: 1.45; }
+.pay-qr { margin: 12px 0 0; display: flex; align-items: center; gap: 14px; }
+.pay-qr img { width: 120px; height: 120px; border-radius: 10px; background: #fff; padding: 6px; border: 1px solid var(--line); image-rendering: pixelated; }
+.pay-qr figcaption { font-size: .8rem; color: var(--muted); line-height: 1.4; }
+.pay-box-qr { display: block; width: 140px; height: 140px; margin-top: 10px; border-radius: 10px; background: #fff; padding: 6px; border: 1px solid var(--line); image-rendering: pixelated; }
