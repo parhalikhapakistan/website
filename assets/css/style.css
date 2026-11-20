@@ -698,3 +698,5 @@ td:first-child { font-weight: 700; color: var(--forest); white-space: nowrap; }
   .sub-menu { transition: opacity .18s ease .25s, transform .18s ease .25s, visibility 0s linear .43s; }
   .has-sub:hover .sub-menu, .has-sub:focus-within .sub-menu, .has-sub.open .sub-menu { transition-delay: 0s, 0s, 0s; }
 }
+.pp-save { margin: 0; color: var(--muted); }
+.pp-save b { color: var(--growth); font-weight: 700; }
