@@ -947,3 +947,57 @@ details.session[open] summary::after { content: "–"; }
   .sessions .session-body { padding-left: 16px; }
 }
 main { background: var(--mint); }
+
+/* ==========================================================
+   Site theme, Phase 2 (2026-11-20)
+   ========================================================== */
+
+/* ---- Founder / Trainers: dark green profile card ---- */
+.founder.profile-card {
+  padding: 48px; border-radius: var(--radius-lg); color: rgba(255,255,255,.86);
+  background: radial-gradient(700px 360px at 90% 0%, rgba(166,206,57,.16), transparent 60%), linear-gradient(160deg, #064B32, #03301F);
+  box-shadow: var(--shadow);
+}
+.profile-card .founder-copy h2, .profile-card .founder-copy h3 { color: #fff; }
+.profile-card .founder-copy p { color: rgba(255,255,255,.86); }
+.profile-card .kicker, .profile-card .founder-role { color: var(--lime); }
+.profile-card .founder-photo::before { background: rgba(166,206,57,.12); border-color: var(--lime); }
+.profile-card .founder-photo img { box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+.profile-card .btn-primary { background: var(--lime); color: var(--forest); }
+.profile-card .btn-primary:hover { background: #fff; color: var(--forest); }
+.profile-card .btn-ghost { color: #fff; border-color: rgba(255,255,255,.55); background: transparent; }
+.profile-card .btn-ghost:hover { background: #fff; color: var(--forest); }
+
+/* ---- stats as fact tiles ---- */
+.stats { background: var(--mint); color: var(--ink); padding: 8px 0 0; }
+.stats-grid { gap: 14px; }
+.stat { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--lime); border-radius: 14px; padding: 18px 20px; }
+.stat strong { color: var(--forest); }
+.stat span { color: var(--muted); }
+.hero + .stats, .page-hero + .stats { padding-top: 40px; }
+
+/* ---- Contact: the contact details stay in view beside the form ---- */
+@media (min-width: 1101px) {
+  .contact-split > div:first-child { position: sticky; top: calc(var(--header-h) + 24px); align-self: start; }
+}
+
+/* ---- AI Programs: side enquiry box ---- */
+.ai-body { grid-template-columns: minmax(0, 1fr) 360px; }
+.ai-main { display: block; }
+.ai-aside .form-card { padding: 26px; }
+.ai-aside h2 { font-size: 1.45rem; margin: 2px 0 6px; }
+.ai-aside .form-grid { gap: 14px; margin-top: 16px; }
+@media (max-width: 1100px) {
+  .ai-body { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .founder.profile-card { padding: 26px 20px; }
+}
+.ai-main .program-block .facts { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 640px) { .ai-main .program-block .facts { grid-template-columns: 1fr; } }
+.profile-card .founder-copy .founder-role, .profile-card .founder-copy .kicker { color: var(--lime); }
+@media (max-width: 640px) {
+  .founder.profile-card { margin: 0 12px; padding: 24px 16px; width: auto; }
+  .profile-card .founder-photo::before { inset: -10px 10px 10px -10px; }
+}
+body { background: var(--mint); }

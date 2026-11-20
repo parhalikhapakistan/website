@@ -353,6 +353,34 @@
     });
   });
 
+  // ---------- AI Programs: side "Ask about a program" box ----------
+  const askForm = document.querySelector('.ai-enquire');
+  if (askForm) {
+    const prog = askForm.querySelector('[name="program"]');
+    let chosen = false;                         // stop following the page once the visitor picks a program
+    prog.addEventListener('change', () => { chosen = true; });
+    // follow the program block being read
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting && !chosen) prog.value = en.target.id.toUpperCase();
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      document.querySelectorAll('.program-block[id]').forEach((b) => io.observe(b));
+    }
+    // each program's "Enquire" button fills in the side box when it is visible
+    const aside = askForm.closest('.ai-aside');
+    document.querySelectorAll('.program-block .program-head .btn').forEach((b) => {
+      b.addEventListener('click', (ev) => {
+        if (!aside || getComputedStyle(aside).position !== 'sticky') return;   // phones: go to the contact page as before
+        ev.preventDefault();
+        prog.value = b.closest('.program-block').id.toUpperCase();
+        chosen = true;
+        askForm.querySelector('[name="name"]').focus();
+      });
+    });
+  }
+
   // Footer year
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
