@@ -169,11 +169,20 @@
     if (none) none.hidden = false;
   }
 
-  const cd = document.querySelector('.pp-countdown');
+  // live "Starts in" countdown to 2 pm Pakistan time on the first day
+  const cd = document.querySelector('.pp-count');
   if (cd) {
-    const days = Math.ceil((new Date(cd.dataset.start + 'T14:00:00') - now) / 86400000);
-    if (days > 1) cd.textContent = 'Starts in ' + days + ' days';
-    else if (days === 1) cd.textContent = 'Starts tomorrow';
+    const target = new Date(cd.dataset.start + 'T14:00:00+05:00');
+    const out = (u, v) => { cd.querySelector('[data-u="' + u + '"]').textContent = String(v).padStart(2, '0'); };
+    const tick = () => {
+      let s = Math.floor((target - new Date()) / 1000);
+      if (s <= 0) { cd.hidden = true; return false; }
+      out('d', Math.floor(s / 86400)); s %= 86400;
+      out('h', Math.floor(s / 3600)); s %= 3600;
+      out('m', Math.floor(s / 60)); out('s', s % 60);
+      return true;
+    };
+    if (tick()) { const timer = setInterval(() => { if (!tick()) clearInterval(timer); }, 1000); }
   }
 
   document.querySelectorAll('.enrol-form').forEach((form) => {
@@ -182,8 +191,25 @@
     const freeRow = form.querySelector('.enrol-free');
     const totalOut = form.querySelector('.enrol-total strong');
     const totalField = form.querySelector('[name="total_fee"]');
-    const box = form.closest('section');
+    const box = form.closest('.pp-enrol') || form.closest('section');
     let total = fee;
+
+    // seat reference, e.g. PLP-482913: sent with the enrolment and shown to the student
+    const refField = form.querySelector('[name="reference"]');
+    const newRef = () => { refField.value = 'PLP-' + String(Math.floor(100000 + Math.random() * 900000)); };
+    newRef();
+
+    // "My company needs an invoice" shows (and enables) the invoice fields
+    const inv = form.querySelector('.invoice-toggle');
+    const invBox = form.querySelector('.invoice-fields');
+    if (inv && invBox) {
+      const sync = () => {
+        invBox.hidden = !inv.checked;
+        invBox.querySelectorAll('input').forEach((i) => { i.disabled = !inv.checked; });
+      };
+      inv.addEventListener('change', sync);
+      sync();
+    }
 
     const update = () => {
       const n = Number(seats.value) || 1;
@@ -198,19 +224,20 @@
     update();
 
     // closed batch: replace the form with a "notify me" box
-    const enrolBy = document.querySelector('.pp-countdown');
+    const enrolBy = document.querySelector('.pp-count');
     if (enrolBy && now > endOfDay(enrolBy.dataset.start)) {
       form.hidden = true;
       box.querySelector('.enrol-closed').hidden = false;
       document.querySelectorAll('.pp-open').forEach((s) => { s.textContent = 'Enrolment closed'; s.className = 'status soon'; });
-      enrolBy.textContent = '';
+      enrolBy.hidden = true;
     }
 
     form.addEventListener('plp:sent', (ev) => {
       const pay = JSON.parse(form.dataset.payment);
       const d = ev.detail;
       const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-      const msg = 'Assalam-o-Alaikum! I have enrolled in ' + form.dataset.program + '. Name: ' + d.name +
+      const ref = d.reference || refField.value;
+      const msg = 'Assalam-o-Alaikum! I have enrolled in ' + form.dataset.program + '. Reference: ' + ref + '. Name: ' + d.name +
         '. Participants: ' + d.participants + '. Amount paid: ' + pkr(total) + '. Here is my payment screenshot.';
       const bank = pay.bank
         ? '<div class="pay-box"><h4>Bank transfer</h4><p>' + esc(pay.bank).replace(/\n/g, '<br>') + '</p></div>'
@@ -218,6 +245,7 @@
       const done = box.querySelector('.enrol-done');
       done.innerHTML =
         '<p class="kicker">Seat requested</p><h3>Thank you, ' + esc(d.name) + '!</h3>' +
+        '<p style="margin:0">Your seat reference:</p><p class="enrol-ref">' + esc(ref) + '</p>' +
         '<p>We have received your enrolment for <strong>' + esc(form.dataset.program) + '</strong>. Please pay <strong>' + pkr(total) +
         '</strong> to confirm your seat.</p>' +
         '<div class="pay-grid"><div class="pay-box"><h4>Easypaisa</h4><p>Account title: <strong>' + esc(pay.easypaisa_title) +
@@ -229,6 +257,8 @@
       form.hidden = true;
       done.hidden = false;
       done.focus();
+      newRef();   // a fresh reference if the form is used again
+      if (inv) { inv.checked = false; inv.dispatchEvent(new Event('change')); }
     });
   });
 
