@@ -855,3 +855,95 @@ body { font-weight: 500; }
 .pp-sched li > div > span:last-child { font-size: .9rem; }
 .enrol-summary > div, .pay-details dl, .pay-amount { font-size: .95rem; }
 .pp-acc-body, .pp-acc-body p { color: var(--text); }
+
+/* ==========================================================
+   Site theme, Phase 1 (2026-11-20): the Public Programs look
+   everywhere: dark green headers (Home included), white cards on
+   a pale green page, numbered accordions, fact tiles, tick lists
+   and a dark green call-to-action box.
+   ========================================================== */
+
+/* ---- dark green headers ---- */
+.page-hero, .hero {
+  color: #fff; border-bottom: 0;
+  background: radial-gradient(900px 420px at 85% 10%, rgba(166,206,57,.18), transparent 60%),
+              linear-gradient(160deg, #064B32 0%, #04382A 60%, #032A20 100%);
+}
+.hero .hero-bg { display: none; }
+.page-hero .breadcrumb, .page-hero .breadcrumb a { color: rgba(255,255,255,.8); }
+.page-hero .breadcrumb a:hover { color: var(--lime); }
+.page-hero .breadcrumb span[aria-current] { color: var(--lime); }
+.page-hero .kicker { color: var(--lime); }
+.page-hero h1, .hero h1, .page-hero h2, .page-hero h3 { color: #fff; }
+.page-hero .lead, .hero .lead, .page-hero p { color: rgba(255,255,255,.86); }
+.page-hero a:not(.btn) { color: var(--lime); }
+.hero .hl { color: var(--lime); }
+.hero .eyebrow { color: #fff; background: rgba(166,206,57,.14); border-color: rgba(166,206,57,.7); }
+.hero .hero-points, .page-hero .hero-points li { color: #fff; }
+.hero .hero-points .ic, .page-hero .hero-points .ic { color: var(--lime); }
+.hero .portrait-ring { background: linear-gradient(160deg, var(--lime), var(--growth) 60%, #0E6B3F); }
+.hero .portrait img { border-color: rgba(255,255,255,.9); }
+.hero .btn-primary, .page-hero .btn-primary { background: var(--lime); color: var(--forest); border-color: var(--lime); }
+.hero .btn-primary:hover, .page-hero .btn-primary:hover { background: #fff; color: var(--forest); }
+.hero .btn-outline, .page-hero .btn-outline, .page-hero .btn-ghost { border-color: rgba(255,255,255,.6); color: #fff; background: transparent; }
+.hero .btn-outline:hover, .page-hero .btn-outline:hover, .page-hero .btn-ghost:hover { background: #fff; color: var(--forest); }
+
+/* ---- white cards on a pale green page ---- */
+.section { background: var(--mint); }
+.section-tint { background: #fff; }
+.section-dark { background: var(--forest); }
+.card-tint { background: #fff; border-color: var(--line); }
+.section-tint .card-tint { background: var(--mint); border-color: transparent; }
+
+/* ---- numbered accordions (AI Programs sessions and other lists) ---- */
+.sessions { grid-template-columns: 1fr; counter-reset: sess; gap: 10px; }
+details.session summary { gap: 14px; justify-content: flex-start; }
+details.session summary > span { flex: 1; min-width: 0; }
+.sessions details.session summary::before {
+  counter-increment: sess; content: counter(sess, decimal-leading-zero);
+  flex-shrink: 0; width: 34px; height: 34px; border-radius: 9px; background: var(--lime-soft); color: var(--forest);
+  display: grid; place-items: center; font-size: .8rem; font-weight: 800;
+}
+details.session summary::after {
+  content: "+"; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--line);
+  display: grid; place-items: center; font-size: 1.05rem; font-weight: 600; color: var(--growth); line-height: 1;
+}
+details.session[open] summary::after { content: "–"; }
+.sessions .session-body { padding: 0 16px 16px 64px; }
+
+/* ---- fact tiles in program blocks ---- */
+.program-block .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.program-block .facts li { border-radius: 12px; background: var(--mint); border: 1px solid var(--line); padding: 12px 14px; align-items: flex-start; gap: 10px; font-size: .88rem; line-height: 1.4; }
+.program-block .facts .ic { flex-shrink: 0; color: var(--forest); background: var(--lime); border-radius: 8px; padding: 5px; width: 28px; height: 28px; }
+
+/* ---- tick lists (topic lists inside sessions keep simple dots) ---- */
+.bullets li { padding-left: 30px; }
+.bullets li::before {
+  left: 0; top: .2em; width: 19px; height: 19px; border-radius: 50%; box-shadow: none;
+  background: var(--growth) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+.card-dark .bullets li::before, .section-dark .bullets li::before {
+  background-color: var(--lime);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23064B32' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+}
+.session-body .bullets li, .pp-acc-body .bullets li { padding-left: 22px; }
+.session-body .bullets li::before, .pp-acc-body .bullets li::before {
+  left: 4px; top: .62em; width: 8px; height: 8px; background: var(--lime); box-shadow: 0 0 0 3px var(--lime-soft);
+}
+
+/* ---- dark green call-to-action box ---- */
+.cta { background: radial-gradient(600px 300px at 90% 0%, rgba(166,206,57,.2), transparent 60%), linear-gradient(140deg, #064B32, #03301F); border: 0; color: rgba(255,255,255,.86); }
+.cta h2 { color: #fff; }
+.cta .btn-primary { background: var(--lime); color: var(--forest); }
+.cta .btn-primary:hover { background: #fff; }
+.cta .btn-outline, .cta .btn-ghost { border-color: rgba(255,255,255,.6); color: #fff; background: transparent; }
+.cta .btn-outline:hover, .cta .btn-ghost:hover { background: #fff; color: var(--forest); }
+
+@media (max-width: 1100px) {
+  .program-block .facts { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .program-block .facts { grid-template-columns: 1fr; }
+  .sessions .session-body { padding-left: 16px; }
+}
+main { background: var(--mint); }
