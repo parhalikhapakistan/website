@@ -1001,3 +1001,41 @@ main { background: var(--mint); }
   .profile-card .founder-photo::before { inset: -10px 10px 10px -10px; }
 }
 body { background: var(--mint); }
+
+/* ==========================================================
+   Trainers list and profile pages (2026-11-20)
+   ========================================================== */
+.tr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 28px; }
+.tr-card { display: flex; flex-direction: column; padding: 0; overflow: hidden; scroll-margin-top: calc(var(--header-h) + 20px); }
+.tr-photo { display: block; background: linear-gradient(160deg, #064B32, #03301F); }
+.tr-photo img { width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; object-position: top; transition: transform .35s ease; }
+.tr-card:hover .tr-photo img { transform: scale(1.03); }
+.tr-body { display: flex; flex-direction: column; gap: 10px; padding: 24px 26px 26px; flex: 1; }
+.tr-body h2 { font-size: 1.4rem; margin: 0; }
+.tr-body h2 a { color: var(--forest); text-decoration: none; }
+.tr-body h2 a:hover { color: var(--growth); }
+.tr-role { margin: 0; font-weight: 700; color: var(--growth); font-size: .92rem; }
+.tr-stats { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 4px 0 0; padding: 0; list-style: none; font-size: .9rem; color: var(--muted); }
+.tr-stats strong { color: var(--forest); font-family: var(--font-head); font-size: 1.1rem; margin-right: 4px; }
+.tr-body > p.small { margin: 0; }
+.tr-tags { gap: 6px; }
+.tr-tags li { padding: 5px 12px; font-size: .8rem; background: var(--mint); }
+.tr-actions { display: flex; gap: 10px; margin-top: auto; padding-top: 10px; }
+.tr-actions .btn-primary { flex: 1; justify-content: center; }
+.tr-li { padding-left: 16px; padding-right: 16px; }
+
+.tr-batches { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.tr-batches a { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; padding: 18px 22px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--lime); border-radius: 14px; text-decoration: none; color: var(--forest); }
+.tr-batches a:hover { border-color: var(--growth); border-left-color: var(--lime); box-shadow: var(--shadow); }
+.tr-batches span { color: var(--muted); font-size: .92rem; }
+
+.tr-minis { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-top: 24px; }
+.tr-mini { display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: #fff; border: 1px solid var(--line); border-radius: 16px; text-decoration: none; color: var(--forest); }
+.tr-mini:hover { border-color: var(--growth); box-shadow: var(--shadow); }
+.tr-mini img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--lime); }
+.tr-mini span { display: flex; flex-direction: column; flex: 1; }
+.tr-mini small { color: var(--muted); font-size: .85rem; }
+@media (max-width: 640px) {
+  .tr-grid { grid-template-columns: 1fr; }
+  .tr-body { padding: 20px; }
+}
