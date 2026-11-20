@@ -430,10 +430,10 @@
 
       <aside class="pp-aside">
         <div class="pp-enrol" id="enrol">
-        <form class="form-card js-form enrol-form" data-subject="Enrolment – AI-Powered Digital Marketing Professional" data-fee="10000" data-program="AI-Powered Digital Marketing Professional" data-payment='{&quot;easypaisa_title&quot;: &quot;Parha Likha Pakistan&quot;, &quot;easypaisa_number&quot;: &quot;0335 5559434&quot;, &quot;bank&quot;: &quot;Bank: Meezan Bank\nAccount title: PARHA LIKHA PAKISTAN\nIBAN: PK80 MEZN 0001 0601 1243 1040&quot;, &quot;whatsapp&quot;: &quot;923355559434&quot;}' novalidate>
+        <form class="form-card js-form enrol-form" data-subject="Enrolment – AI-Powered Digital Marketing Professional" data-fee="10000" data-program="AI-Powered Digital Marketing Professional" data-payment='{&quot;easypaisa_title&quot;: &quot;Parha Likha Pakistan&quot;, &quot;easypaisa_number&quot;: &quot;0335 5559434&quot;, &quot;bank_name&quot;: &quot;Meezan Bank&quot;, &quot;bank_title&quot;: &quot;PARHA LIKHA PAKISTAN&quot;, &quot;iban&quot;: &quot;PK80 MEZN 0001 0601 1243 1040&quot;, &quot;bank&quot;: &quot;Bank: Meezan Bank\nAccount title: PARHA LIKHA PAKISTAN\nIBAN: PK80 MEZN 0001 0601 1243 1040&quot;, &quot;whatsapp&quot;: &quot;923355559434&quot;}' novalidate>
           <p class="kicker">Enrol now</p>
           <h2>Reserve your seat</h2>
-          <p class="small muted">Fill in the form and you will see the payment details on the next screen. Your seat is confirmed once we receive your payment.</p>
+          <p class="small muted">Pay now and upload your receipt, or reserve your seat now and pay later. Your seat is confirmed once we receive your payment.</p>
           <div class="form-grid">
             <div class="field full"><label for="e-name">Full name <span class="req">*</span></label><input id="e-name" name="name" required autocomplete="name"></div>
             <div class="field full"><label for="e-email">Email <span class="req">*</span></label><input id="e-email" name="email" type="email" required autocomplete="email"></div>
@@ -445,6 +445,25 @@
                 <label><input type="radio" name="payment_method" value="Easypaisa" required checked><span><strong>Easypaisa</strong><small>Instant, from your Easypaisa app or account</small></span></label>
                 <label><input type="radio" name="payment_method" value="Bank transfer"><span><strong>Bank transfer</strong><small>To our Meezan Bank account, from any Pakistani bank or app</small></span></label>
               </div></fieldset></div>
+            <div class="field full">
+              <div class="pay-details" data-method="Easypaisa">
+                <p class="pp-label">Pay by Easypaisa</p>
+                <dl><dt>Account title</dt><dd>Parha Likha Pakistan</dd>
+                <dt>Number</dt><dd><span>0335 5559434</span> <button type="button" class="copy-btn" data-copy="03355559434">Copy</button></dd></dl>
+              </div>
+              <div class="pay-details" data-method="Bank transfer" hidden>
+                <p class="pp-label">Pay by bank transfer</p>
+                <dl><dt>Bank</dt><dd>Meezan Bank</dd>
+                <dt>Account title</dt><dd>PARHA LIKHA PAKISTAN</dd>
+                <dt>IBAN</dt><dd><span>PK80 MEZN 0001 0601 1243 1040</span> <button type="button" class="copy-btn" data-copy="PK80MEZN0001060112431040">Copy</button></dd></dl>
+              </div>
+              <p class="pay-amount">Amount to pay: <strong class="pay-total">PKR 10,000</strong></p>
+            </div>
+            <div class="field full receipt-field" hidden>
+              <label for="e-receipt">Payment receipt <span class="small muted">(optional)</span></label>
+              <input id="e-receipt" name="receipt" type="file" accept="image/jpeg,image/png,image/webp,image/heic,application/pdf">
+              <small class="muted">Already paid? Upload a screenshot or PDF of your receipt (up to 5 MB). Not yet? Submit now and send it later on WhatsApp.</small>
+            </div>
             <div class="field full"><label class="consent"><input type="checkbox" class="invoice-toggle" name="invoice_needed" value="Yes"> <span>My company needs an invoice</span></label></div>
             <div class="invoice-fields field full" hidden>
               <div class="form-grid">

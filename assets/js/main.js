@@ -90,6 +90,10 @@
   // Until a key is added, forms open the visitor's email app with the details filled in.
   const WEB3FORMS_KEY = '928851b7-b0e3-4215-981a-46c96f21671a';
   const TO_EMAIL = 'info@parhalikhapakistan.com';
+  // Google Apps Script web app (PLP Google account) that saves enrolments to the
+  // "PLP Enrolments" sheet and receipts to Drive. Source: integrations/enrolments-apps-script.gs
+  // While empty, the receipt upload is hidden and enrolments are emailed only.
+  const ENROL_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx_TvRVstlPg6LjWQQVhDJSwPvvs1SmMZKC5u5iO_8_PXivlng4-J6rBEoxnoNaQ8Nd/exec';
 
   document.querySelectorAll('.js-form').forEach((form) => {
     form.addEventListener('submit', async (e) => {
@@ -120,6 +124,8 @@
       const btn = form.querySelector('[type="submit"]');
       btn.disabled = true;
       status.textContent = 'Sending…';
+      // enrolment forms first save to the Google sheet (and upload the receipt)
+      if (form.plpBeforeSend) await form.plpBeforeSend(data, status);
       data.append('access_key', WEB3FORMS_KEY);
       data.append('subject', subject);
       data.append('from_name', 'PLP Website');
@@ -219,9 +225,75 @@
       if (free) freeRow.querySelector('strong').textContent = free + ' free seat' + (free > 1 ? 's' : '') + ' (− ' + pkr(free * fee) + ')';
       totalOut.textContent = pkr(total) + (n > 1 ? ' for ' + n + ' participants' : '');
       totalField.value = pkr(total) + ' (' + n + ' participant' + (n > 1 ? 's' : '') + (free ? ', ' + free + ' free' : '') + ')';
+      form.querySelectorAll('.pay-total').forEach((el) => { el.textContent = pkr(total); });
     };
     seats.addEventListener('change', update);
     update();
+
+    // show the payment details for the chosen method
+    const showPay = () => {
+      const m = (form.querySelector('[name="payment_method"]:checked') || {}).value;
+      form.querySelectorAll('.pay-details').forEach((el) => { el.hidden = el.dataset.method !== m; });
+    };
+    form.querySelectorAll('[name="payment_method"]').forEach((r) => r.addEventListener('change', showPay));
+    showPay();
+
+    // copy the account number / IBAN
+    form.querySelectorAll('.copy-btn').forEach((b) => b.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = 'Copied'; }
+      catch (err) { b.textContent = b.dataset.copy; }
+      setTimeout(() => { b.textContent = 'Copy'; }, 2000);
+    }));
+
+    // receipt upload (only when the Google Apps Script is connected)
+    const receipt = form.querySelector('[name="receipt"]');
+    const receiptBox = form.querySelector('.receipt-field');
+    const okTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif', 'application/pdf'];
+    if (receiptBox) receiptBox.hidden = !ENROL_SCRIPT_URL;
+    if (receipt) {
+      if (!ENROL_SCRIPT_URL) receipt.disabled = true;
+      receipt.addEventListener('change', () => {
+        const fl = receipt.files[0];
+        let msg = '';
+        if (fl && okTypes.indexOf(fl.type) === -1) msg = 'Please choose a JPG, PNG or PDF file.';
+        else if (fl && fl.size > 5 * 1024 * 1024) msg = 'This file is larger than 5 MB. Please upload a smaller screenshot.';
+        receipt.setCustomValidity(msg);
+        if (msg) receipt.reportValidity();
+      });
+    }
+    let uploaded = false;
+
+    const toBase64 = (fl) => new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(String(r.result).split(',')[1]);
+      r.onerror = reject;
+      r.readAsDataURL(fl);
+    });
+
+    // runs before the enrolment email is sent: saves the row (and receipt) in Google
+    form.plpBeforeSend = async (data, status) => {
+      const fl = receipt && receipt.files[0];
+      data.delete('receipt');                    // files are not sent by email
+      uploaded = false;
+      if (!ENROL_SCRIPT_URL) return;
+      const payload = {};
+      data.forEach((v, k) => { payload[k] = v; });
+      if (fl) {
+        status.textContent = 'Uploading your receipt…';
+        payload.receipt = { name: fl.name, type: fl.type, data: await toBase64(fl) };
+      }
+      try {
+        const res = await fetch(ENROL_SCRIPT_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+        const json = await res.json();
+        uploaded = !!(json.ok && json.receipt);
+        data.append('receipt', fl ? (uploaded ? 'Uploaded – saved in the PLP Payment Receipts folder' : 'Upload failed – ask the student on WhatsApp') : 'Not uploaded yet (pay later)');
+        if (json.receiptUrl) data.append('receipt_link', json.receiptUrl);
+      } catch (err) {
+        data.append('receipt', fl ? 'Upload failed – ask the student on WhatsApp' : 'Not uploaded yet (pay later)');
+        data.append('sheet', 'Not saved to the enrolment sheet (connection error)');
+      }
+      status.textContent = 'Sending…';
+    };
 
     // closed batch: replace the form with a "notify me" box
     const enrolBy = document.querySelector('.pp-count');
@@ -243,6 +315,24 @@
         ? '<div class="pay-box"><h4>Bank transfer</h4><p>' + esc(pay.bank).replace(/\n/g, '<br>') + '</p></div>'
         : '<div class="pay-box"><h4>Bank transfer</h4><p>Message us on WhatsApp and we will send you the bank account details.</p></div>';
       const done = box.querySelector('.enrol-done');
+      if (uploaded) {
+        const q = 'Assalam-o-Alaikum! I have enrolled in ' + form.dataset.program + ' and uploaded my payment receipt. Reference: ' + ref + '. Name: ' + d.name + '.';
+        done.innerHTML =
+          '<p class="kicker">Receipt received</p><h3>Thank you, ' + esc(d.name) + '!</h3>' +
+          '<p style="margin:0">Your seat reference:</p><p class="enrol-ref">' + esc(ref) + '</p>' +
+          '<p>We have received your enrolment for <strong>' + esc(form.dataset.program) + '</strong> and your payment receipt for <strong>' + pkr(total) +
+          '</strong>. We will check your payment and confirm your seat on WhatsApp, then send you the class link before the first session.</p>' +
+          '<div class="btn-row"><a class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" href="https://wa.me/' + pay.whatsapp +
+          '?text=' + encodeURIComponent(q) + '"><svg class="ic"><use href="#i-whatsapp"/></svg> Questions? WhatsApp us</a></div>' +
+          '<p class="small muted" style="margin-top:14px">Please keep your reference number. Fees are non-refundable once paid, unless PLP cancels the program.</p>';
+        form.hidden = true;
+        done.hidden = false;
+        done.focus();
+        newRef();
+        if (inv) { inv.checked = false; inv.dispatchEvent(new Event('change')); }
+        showPay();
+        return;
+      }
       done.innerHTML =
         '<p class="kicker">Seat requested</p><h3>Thank you, ' + esc(d.name) + '!</h3>' +
         '<p style="margin:0">Your seat reference:</p><p class="enrol-ref">' + esc(ref) + '</p>' +

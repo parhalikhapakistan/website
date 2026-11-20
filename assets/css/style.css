@@ -829,3 +829,15 @@ details[open] > summary .pp-plus::after { transform: translate(-50%, -50%) rotat
 }
 .pp-aside .pay-grid { grid-template-columns: 1fr; }
 .pp-aside .enrol-done .btn { width: 100%; }
+.pay-details { padding: 14px 16px; border-radius: 12px; background: var(--lime-soft); border: 1px solid var(--lime); }
+.pay-details[hidden] { display: none; }
+.pay-details dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 8px 0 0; font-size: .9rem; }
+.pay-details dt { color: var(--muted); }
+.pay-details dd { margin: 0; font-weight: 700; color: var(--forest); overflow-wrap: anywhere; }
+.copy-btn { margin-left: 6px; font: 600 .72rem var(--font-body); padding: 3px 9px; border-radius: 6px; border: 1px solid var(--growth); background: #fff; color: var(--growth); cursor: pointer; }
+.copy-btn:hover { background: var(--growth); color: #fff; }
+.pay-amount { margin: 10px 0 0; font-size: .9rem; color: var(--ink); }
+.pay-amount strong { color: var(--forest); }
+.receipt-field[hidden] { display: none; }
+.receipt-field input[type=file] { padding: 10px; font-size: .85rem; background: var(--mint); }
+.receipt-field small { font-size: .8rem; line-height: 1.45; }
