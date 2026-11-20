@@ -127,6 +127,7 @@
         const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
         const json = await res.json();
         if (!json.success) throw new Error(json.message);
+        form.dispatchEvent(new CustomEvent('plp:sent', { detail: Object.fromEntries(data) }));
         form.reset();
         status.textContent = 'Thank you! We have received your message and will reply soon.';
         status.classList.add('ok');
@@ -147,6 +148,89 @@
       card.hidden = !(cat === 'all' || card.dataset.cat === cat || card.dataset.cat === 'always');
     });
   }));
+
+  // ---------- Public programs ----------
+  // Enrolment closes at the end of the "enrol by" day; a batch disappears from lists after it ends.
+  const endOfDay = (iso) => new Date(iso + 'T23:59:59');
+  const now = new Date();
+  const pkr = (n) => 'PKR ' + n.toLocaleString('en-PK');
+
+  document.querySelectorAll('.program-card').forEach((c) => {
+    if (now > endOfDay(c.dataset.ends)) { c.hidden = true; return; }
+    if (now > endOfDay(c.dataset.enrolBy)) {
+      const s = c.querySelector('.status');
+      s.textContent = 'Enrolment closed'; s.className = 'status soon';
+    }
+  });
+  const grid = document.querySelector('.pp-grid:not(.pp-others)');
+  if (grid && ![...grid.children].some((c) => !c.hidden)) {
+    grid.hidden = true;
+    const none = document.querySelector('.pp-none');
+    if (none) none.hidden = false;
+  }
+
+  const cd = document.querySelector('.pp-countdown');
+  if (cd) {
+    const days = Math.ceil((new Date(cd.dataset.start + 'T14:00:00') - now) / 86400000);
+    if (days > 1) cd.textContent = 'Starts in ' + days + ' days';
+    else if (days === 1) cd.textContent = 'Starts tomorrow';
+  }
+
+  document.querySelectorAll('.enrol-form').forEach((form) => {
+    const fee = Number(form.dataset.fee);
+    const seats = form.querySelector('[name="participants"]');
+    const freeRow = form.querySelector('.enrol-free');
+    const totalOut = form.querySelector('.enrol-total strong');
+    const totalField = form.querySelector('[name="total_fee"]');
+    const box = form.closest('section');
+    let total = fee;
+
+    const update = () => {
+      const n = Number(seats.value) || 1;
+      const free = Math.floor(n / 6);          // 5 + 1 free, 10 + 2 free ...
+      total = (n - free) * fee;
+      freeRow.hidden = !free;
+      if (free) freeRow.querySelector('strong').textContent = free + ' free seat' + (free > 1 ? 's' : '') + ' (− ' + pkr(free * fee) + ')';
+      totalOut.textContent = pkr(total) + (n > 1 ? ' for ' + n + ' participants' : '');
+      totalField.value = pkr(total) + ' (' + n + ' participant' + (n > 1 ? 's' : '') + (free ? ', ' + free + ' free' : '') + ')';
+    };
+    seats.addEventListener('change', update);
+    update();
+
+    // closed batch: replace the form with a "notify me" box
+    const enrolBy = document.querySelector('.pp-countdown');
+    if (enrolBy && now > endOfDay(enrolBy.dataset.start)) {
+      form.hidden = true;
+      box.querySelector('.enrol-closed').hidden = false;
+      document.querySelectorAll('.pp-open').forEach((s) => { s.textContent = 'Enrolment closed'; s.className = 'status soon'; });
+      enrolBy.textContent = '';
+    }
+
+    form.addEventListener('plp:sent', (ev) => {
+      const pay = JSON.parse(form.dataset.payment);
+      const d = ev.detail;
+      const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const msg = 'Assalam-o-Alaikum! I have enrolled in ' + form.dataset.program + '. Name: ' + d.name +
+        '. Participants: ' + d.participants + '. Amount paid: ' + pkr(total) + '. Here is my payment screenshot.';
+      const bank = pay.bank
+        ? '<div class="pay-box"><h4>Bank transfer</h4><p>' + esc(pay.bank).replace(/\n/g, '<br>') + '</p></div>'
+        : '<div class="pay-box"><h4>Bank transfer</h4><p>Message us on WhatsApp and we will send you the bank account details.</p></div>';
+      const done = box.querySelector('.enrol-done');
+      done.innerHTML =
+        '<p class="kicker">Seat requested</p><h3>Thank you, ' + esc(d.name) + '!</h3>' +
+        '<p>We have received your enrolment for <strong>' + esc(form.dataset.program) + '</strong>. Please pay <strong>' + pkr(total) +
+        '</strong> to confirm your seat.</p>' +
+        '<div class="pay-grid"><div class="pay-box"><h4>Easypaisa</h4><p>Account title: <strong>' + esc(pay.easypaisa_title) +
+        '</strong><br>Number: <strong>' + esc(pay.easypaisa_number) + '</strong></p></div>' + bank + '</div>' +
+        '<p>After paying, send the payment screenshot on WhatsApp. We will confirm your seat and send the class link.</p>' +
+        '<div class="btn-row"><a class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" href="https://wa.me/' + pay.whatsapp +
+        '?text=' + encodeURIComponent(msg) + '"><svg class="ic"><use href="#i-whatsapp"/></svg> Send payment screenshot</a></div>' +
+        '<p class="small muted" style="margin-top:14px">Fees are non-refundable once paid, unless PLP cancels the program.</p>';
+      form.hidden = true;
+      done.hidden = false;
+      done.focus();
+    });
+  });
 
   // Footer year
   const y = document.getElementById('year');
