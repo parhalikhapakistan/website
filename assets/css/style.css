@@ -690,3 +690,11 @@ td:first-child { font-weight: 700; color: var(--forest); white-space: nowrap; }
 .program-card .pp-perk { margin: 12px 0 0; align-self: flex-start; }
 .pp-schedule .pp-break td { background: var(--mint); color: var(--muted); font-style: italic; }
 .pp-schedule .pp-break td:first-child { color: var(--muted); }
+
+/* Dropdown: keep the menu open while the mouse moves from the menu item down to it.
+   An invisible bridge covers the gap, and closing waits a moment so a crooked mouse path doesn't close it. */
+@media (min-width: 981px) {
+  .sub-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
+  .sub-menu { transition: opacity .18s ease .25s, transform .18s ease .25s, visibility 0s linear .43s; }
+  .has-sub:hover .sub-menu, .has-sub:focus-within .sub-menu, .has-sub.open .sub-menu { transition-delay: 0s, 0s, 0s; }
+}
