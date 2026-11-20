@@ -168,6 +168,8 @@
       s.textContent = 'Enrolment closed'; s.className = 'status soon';
     }
   });
+  // Home page batch banner: hide once enrolment has closed
+  document.querySelectorAll('.home-batch').forEach((b) => { if (now > endOfDay(b.dataset.enrolBy)) b.hidden = true; });
   const grid = document.querySelector('.pp-grid:not(.pp-others)');
   if (grid && ![...grid.children].some((c) => !c.hidden)) {
     grid.hidden = true;
