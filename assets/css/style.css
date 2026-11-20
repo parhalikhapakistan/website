@@ -845,3 +845,13 @@ details[open] > summary .pp-plus::after { transform: translate(-50%, -50%) rotat
 .pay-qr img { width: 120px; height: 120px; border-radius: 10px; background: #fff; padding: 6px; border: 1px solid var(--line); image-rendering: pixelated; }
 .pay-qr figcaption { font-size: .8rem; color: var(--muted); line-height: 1.4; }
 .pay-box-qr { display: block; width: 140px; height: 140px; margin-top: 10px; border-radius: 10px; background: #fff; padding: 6px; border: 1px solid var(--line); image-rendering: pixelated; }
+
+/* Readability (2026-11-20): Medium-weight body text, darker colours, normal-size answers */
+:root { --text: #1F2F27; --muted: #4B5E54; }
+body { font-weight: 500; }
+.small { font-size: .92rem; }
+.pp-acc-body, .session-body { font-size: 1rem; }
+.pp-acc-title small { font-size: .85rem; }
+.pp-sched li > div > span:last-child { font-size: .9rem; }
+.enrol-summary > div, .pay-details dl, .pay-amount { font-size: .95rem; }
+.pp-acc-body, .pp-acc-body p { color: var(--text); }
